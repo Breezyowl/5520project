@@ -11,6 +11,7 @@ eusernam:admin
 pw:cuhk1001
 
 2.项目运行
+下载 Eclipse ee版本
 运行/CUHK5510Project/src/main/java/com/captainxero/MybatisplusApplication.java run as java application
 
 3.项目网页地址

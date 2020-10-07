@@ -1,4 +1,4 @@
-package com.captainxero.project.system.user.entity;
+package com.captainxero.project.entity;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;

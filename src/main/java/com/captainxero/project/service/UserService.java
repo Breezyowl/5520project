@@ -1,7 +1,7 @@
-package com.captainxero.project.system.user.service;
+package com.captainxero.project.service;
 
-import com.captainxero.project.system.user.entity.User;
 import com.baomidou.mybatisplus.service.IService;
+import com.captainxero.project.entity.User;
 
 /**
  * <p>

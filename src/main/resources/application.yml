@@ -1,10 +1,11 @@
-
+# 默认服务端口
 server:
-  # 默认服务端口
-  port: 80
+  port: 8080
+  servlet:
+    context-path : /ffpay
   tomcat:
-    uri-encoding: utf-8
-
+    uri-encoding : utf-8
+    
 # Spring配置
 spring:
   thymeleaf:

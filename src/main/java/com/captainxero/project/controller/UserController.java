@@ -7,8 +7,14 @@ import com.captainxero.project.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 import io.swagger.annotations.Api;
@@ -32,6 +38,8 @@ public class UserController {
     
     private static final Logger logger = LogManager.getLogger(UserController.class);
     
+	public static final String SUCCESS = "SUCCESS";
+	public static final String EXCEPTION = "EXCEPTION:";
     // 简单登录验证
     @ApiOperation(value="获取用户信息", notes="登录系统")
     @ApiImplicitParams({
@@ -40,17 +48,21 @@ public class UserController {
     })
     @RequestMapping(value="/login", method=RequestMethod.GET)
     @ResponseBody
-    public String checkLogin(@RequestParam("username") String username, @RequestParam("password") String password, Map<String,Object> map){
-        User loginUser = userService.selectUserByName(username);
+    public ResponseEntity<String> checkLogin(HttpServletResponse response,@RequestParam("username") String username, @RequestParam("password") String password){   	
+    	
+    	User loginUser = userService.selectUserByName(username);
         String userPassword = loginUser.getPassword();
 
         if(userPassword.equals(password)){
-            return "True";
+        	Cookie user = new Cookie("username", username);
+        	response.addCookie(user);
+            return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
         }else {
-            map.put("msg","用户名密码错误");
-            return "False";
+            return new ResponseEntity<String>(EXCEPTION + "用户名密码错误", HttpStatus.OK);
         }
     }
+    
+    
 
 
 }

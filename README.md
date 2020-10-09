@@ -15,7 +15,7 @@ pw:cuhk1001
 运行/CUHK5510Project/src/main/java/com/captainxero/MybatisplusApplication.java run as java application
 
 3.项目网页地址
-http://localhost:8080/ffpay
+http://localhost:8080
 测试用户：
 用户名：111111
 密码：111111
@@ -24,5 +24,5 @@ http://localhost:8080/ffpay
 文档：https://kdocs.cn/l/cl5N5h219a46
 
 5.项目后端接口地址
-http://localhost:8080/ffpay/swagger-ui.html
+http://localhost:80/swagger-ui.html
 

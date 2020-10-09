@@ -30,7 +30,7 @@ public class Swagger2Config {
 	return new ApiInfoBuilder()
 		.title("CUHK项目服务API")
 		.description("CUHK@API")
-		.termsOfServiceUrl("http://localhost:8080/ffpay")
+		.termsOfServiceUrl("http://localhost:8080")
 		.license("All rights reserved.")
 		.version("1.0")
 		.build();

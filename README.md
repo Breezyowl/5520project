@@ -24,5 +24,5 @@ http://localhost:8080
 文档：https://kdocs.cn/l/cl5N5h219a46
 
 5.项目后端接口地址
-http://localhost:80/swagger-ui.html
+http://localhost:8080/swagger-ui.html
 

@@ -1,0 +1,122 @@
+@font-face{
+    font-family: 'PingFang SC';
+    src : url('../fonts/PingFang-SC-Regular.ttf');
+}
+
+/* top box */
+.topBox_background{
+	background-image: url(../img/MyBalance/图片\ 18.png);
+	width: 414px;
+	height: 90px;
+}
+
+.topBox_background .topBox{
+	/* 背景图片设置 */
+	background-image: url(../img/MyBalance/topBackground.png);
+	opacity: 100%;
+	width: 414px;
+	height: 90px;
+
+}
+
+.topBox .text{
+	width: 178px;
+	height: 48px;
+	left: 120px;
+	top: 26px;
+	color: rgba(255, 255, 255, 1);
+	font-size: 32px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'PingFang SC';
+	position: absolute;
+}
+.topBox .icon{
+	opacity: 100%;
+	width: 35px;
+	height: 35px;
+	left: 30px;
+	top: 33px;
+	font-size: 35px;
+	color: rgba(229, 229, 229, 1);
+	position: absolute;
+}
+
+/* middle box */
+.middle_box{
+	width: 414px;
+	height: 100%;
+	left: 0px;
+	top: 89px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+
+/* date style */
+.date_picker{
+	width: 144px;
+	height: 37px;
+	left: 135px;
+	top: 90px;
+	position: absolute;
+}
+.middle_box /deep/ .el-input__inner {
+	color: rgba(49, 166, 145, 1);
+	width:144px;
+}
+
+/* tabs style */
+.tabs{
+	width: 100%;
+	height: 37px;
+	top: 120px;
+	position: absolute;
+}
+.middle_box /deep/ .el-tabs__active-bar{
+	background-color: rgba(49, 166, 145, 1);
+}
+.middle_box /deep/ .el-tabs__item:hover {
+	color: rgba(49, 166, 145, 1);
+}
+.middle_box /deep/ .el-tabs__item.is-active {
+	color: rgba(49, 166, 145, 1);
+}
+.middle_box /deep/ .el-tabs__item {
+	color: rgba(166, 166, 166, 1);
+}
+
+/* chart style */
+.line_chart{
+	width: 414px;
+	height: 200px;
+	
+}
+
+.pie_chart{
+	width: 414px;
+	height: 200px;
+}
+.classification{
+	width: 349px;
+	height:200px;
+	/* left: 26px;
+	bottom: 20px;
+	position: absolute; */
+}
+
+/* cross line */
+.cross_line{
+	width: 354px;
+	height: 1px;
+	left: 30px;
+	top: 200px;
+	color: rgb(0, 0, 0);
+	background-color: rgba(153, 153, 153, 1);
+	font-size: 14px;
+	line-height: 100%;
+	text-align: center;
+}

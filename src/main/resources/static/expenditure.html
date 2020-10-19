@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Expenditure</title>
+
+    <!-- <link href="css/bootstrap.min.css"  rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css"  rel="stylesheet">
+    <link href="css/animate.css"  rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"> -->
+    <!-- Mainly scripts -->
+    <!-- <script src="js/jquery-3.1.1.min.js"  type= "text/javascript"></script>  -->
+    
+    <!-- Expenditure 页面 css style -->
+    <link href="css/expenditure.css" rel="stylesheet">
+    
+    <!-- Bootstrap 及 js 引用 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <!-- vue CDN引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- element UI 引入 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <!-- 引入echarts -->
+    <script src="./js/echarts.min.js"></script>
+    <script src="js/wonderland.js"></script>
+    
+</head>
+
+<body>
+    <div id="app">
+    
+    <div class = "topBox_background">
+        <div class = "topBox"> 
+            <div>
+                <object data="./img/MyBalance/图标 171.svg" type="image/svg+xml" class = "icon"></object>
+            </div>
+            <div class = "text">
+                My Balance
+            </div>
+        </div>
+    </div>
+
+    <div class = "middle_box">
+        <div class = "date_picker">
+            <el-date-picker
+                v-model="value1"
+                type="date"
+                placeholder="value1"
+                size = "mini">
+            </el-date-picker>
+        </div>
+
+        <div class = "tabs">
+            <el-tabs v-model="activeTab" @tab-click="handleClick" :stretch="true">
+                <el-tab-pane label="Expenditure" name="first">
+                    <div class="line_chart">
+                        <div id="line" 
+                        style="width: 349px;
+                        height:200px;
+                        left: 26px;"></div>
+                    </div>
+                    <div>
+                        <hr class="cross_line">
+                    </div>
+                    <div class="pie_chart">
+                        <div id="pie" 
+                        style="width: 349px;
+                        height:200px;
+                        left: 26px;"></div>
+                    </div>
+                    <div>
+                        <hr class="cross_line">
+                    </div>
+                    
+                </el-tab-pane>
+                <el-tab-pane label="Income" name="second">
+                    收入
+                </el-tab-pane>
+            </el-tabs>
+        </div>
+    </div>
+
+</div>
+</body>
+
+
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+
+        data(){
+            return{
+                // date picker value
+                value1: '',
+
+                // 默认选中标签
+                activeTab: 'first',
+            }
+        },
+        
+
+        created:
+            function(){
+               this.value1 = Date.now();
+            },
+
+        methods:{
+            // tabs 切换
+            handleClick(tab, event) {
+                console.log(tab, event);
+            },
+
+        }
+
+
+    })
+
+    function drawLineChart(){
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('line'), 'wonderland');
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'Daily Expenditure',
+                textStyle:{
+                    fontSize: 17,
+                    color: 'rgba(128, 128, 128, 1)',
+                    fontWeight: 'bold',
+                    fontFamily: 'PingFang SC'
+                }
+            },
+            grid:{
+                y2: 20,
+            },
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            tooltip: {},
+            series: [{
+
+                data: [820, 932, 901, 934, 1290, 1330, 1320],
+                type: 'line'
+
+            
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart1.setOption(option,true);
+    }
+
+    function drawPieChart(){
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('pie'), 'wonderland');
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'Classification',
+                textStyle:{
+                    fontSize: 17,
+                    color: 'rgba(128, 128, 128, 1)',
+                    fontWeight: 'bold',
+                    fontFamily: 'PingFang SC'
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}: {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                right: "15%",
+                top: "35%",
+                data: ['Eating', 'Clothing','Others']
+            },
+
+
+            series: [
+                {   
+                    center:["40%","60%"],
+                    name: 'Kind',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '22',
+                            fontWeight: 'bold',
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data: [
+                        {value: 4533, name: 'Eating'},
+                        {value: 3321, name: 'Clothing'},
+                        {value: 3113, name: 'Others'}
+                    ],
+                    right:"40%",
+                }
+            ]
+        };
+        myChart.setOption(option,true);
+
+        
+    }
+
+    this.drawLineChart()
+    this.drawPieChart()
+
+
+ </script>
+</html>

@@ -18,5 +18,5 @@ public interface UserService extends IService<User> {
      * @param userName 用户名
      * @return 用户对象信息
      */
-    User selectUserByName(String userName);
+    User selectUserById(String userid);
 }

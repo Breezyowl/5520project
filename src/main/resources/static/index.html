@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="font-size: 64.6875px">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,43 +10,64 @@
     <link href="font-awesome/css/font-awesome.css"  rel="stylesheet">
     <link href="css/animate.css"  rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
     <!-- Mainly scripts -->
     <script src="js/jquery-3.1.1.min.js"  type= "text/javascript"></script>
-    
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<body id="protoPreview" class=" overflowHidden notIsLandscapeBody" style="width: 100%; height: 100%; opacity: 1;">
+<body id="protoPreview" class=" overflowHidden">
 	
-    <div>
-    	<div class="phone-view-box ip6p show" style="width: 414px; height: 736px; left: 0px; right: 0px;">
+    <div class="body-wrapper">
+    	<div class="phone-view-box">
     		<div class="model-wrapper" style="transform: scale(0.72);">
     			<div class="mobile-model"></div>
     		</div>
-    		<div class="operate-wrapper" style="width: 344px; height: 530px;"></div>
-    		<div id="appContainer" class="mobile-wrapper hide-event-tag" style="width: 298.08px; height: 529.92px; left: 57.96px; top: 103.04px; touch-action: auto; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-    			<div id="pageContainer" class="pageContainer is-mobile" data-scale="72" style="transform: scale(0.72); width: 414px; height: 736px; left: -57.96px; top: -103.04px;">
-    				<div id="page1" data-islandscape="false" class="page current no-scrolling-touch" data-key="1" data-direction="y" style="height: 736px; top: 0px;">
-    					<div id="image_3X1" class="imageC cDiv state0  image_3X1" data-state="-1" data-select=".image_3X1"><div class="cutImgOutBox"><img class="cImg" src="https://img.xiaopiu.com/userImages/img142030174d9209bb8.png"></div><div class="insetBorder"></div><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="image_4X1" class="imageC cDiv state0  image_4X1" data-state="-1" data-select=".image_4X1"><div class="cutImgOutBox"><img class="cImg" src="https://img.xiaopiu.com/userImages/img142032174d920f1a8.png"></div><div class="insetBorder"></div><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="text_30X1" class="textC cDiv state0  text_30X1 event-show tA" data-state="-1" data-select=".text_30X1" style="touch-action: auto; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><p class="content vM hC tB">Face&nbsp;ID</p><div class="outerBorderBox stretch-wrapper"></div><div class="gesture-tag"></div></div>
-    					<div id="text_41X1" class="textC cDiv state0  text_41X1 minFont" data-state="-1" data-select=".text_41X1"><p class="content vT hL">By&nbsp;signing&nbsp;up,&nbsp;I&nbsp;agree&nbsp;to&nbsp;the&nbsp;Term&nbsp;of&nbsp;Use.</p><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="text_43X1" class="textC cDiv state0  text_43X1 minFont" data-state="-1" data-select=".text_43X1"><p class="content vM hC"></p><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="text_45X1" class="textC cDiv state0  text_45X1 minFont" data-state="-1" data-select=".text_45X1"><p class="content vM hC"></p><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="text_46X1" class="textC cDiv state0  text_46X1 minFont" data-state="-1" data-select=".text_46X1"><p class="content vT hL">+852</p><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="icon_5X1" class="iconC cDiv state0  icon_5X1" data-state="-1" data-select=".icon_5X1"><i class="material-icons icon iconfont">arrow_drop_down</i></div>
-    					<div id="text_934X1" class="textC cDiv state0  text_934X1 editable minFont" data-state="-1" data-select=".text_934X1"><p class="content isInput vM hL" contenteditable="true" placeholder="Phone Number"></p><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="text_935X1" class="textC cDiv state0  text_935X1 editable minFont" data-state="-1" data-select=".text_935X1"><p class="content isInput vM hL" contenteditable="true" placeholder="Verification Code"></p><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="image_235X2" class="imageC cDiv state0  image_235X2" data-state="-1" data-select=".image_235X2"><div class="cutImgOutBox"><img class="cImg" src="https://img.xiaopiu.com/userImages/img8159694579f0.jpeg"></div><div class="insetBorder"></div><div class="outerBorderBox stretch-wrapper"></div></div>
-    					<div id="text_1309X2" class="textC cDiv state0  text_1309X2 auto-width" data-state="-1" data-select=".text_1309X2"><p class="content vT hL">Welcome,&nbsp;<br>Catherine&nbsp;</p><div class="outerBorderBox stretch-wrapper"></div></div>
+    		<div id="appContainer" class="mobile-wrapper">
+    			<div id="pageContainer" class="pageContainer" data-scale="72">
+    				<div id="page1" data-islandscape="false" class="page current" data-key="1" data-direction="y" >
+    					<div id="image_3X1" class="imageC cDiv image_3X1" data-state="-1" data-select=".image_3X1">
+	    					<div class="cutImgOutBox"><img class="cImg" src="./img/img142030174d9209bb8.png"></div>
+    					</div>
+    					<div id="image_4X1" class="imageC cDiv image_4X1" data-state="-1" data-select=".image_3X1">
+	    					<div class="cutImgOutBox"><img class="cImg" src="./img/img142032174d920f1a8.png"></div>
+    					</div>
+    					<div id="logbtn" class="textC cDiv text_30X1" >
+    						<p class="content innercontent">Face&nbsp;ID</p>
+    						<div class="gesture-tag"></div>
+    					</div>
+    					<div id="text_41X1" class="textC cDiv text_41X1">
+    						<p class="content text_41X1content">By&nbsp;signing&nbsp;up,&nbsp;I&nbsp;agree&nbsp;to&nbsp;the&nbsp;Term&nbsp;of&nbsp;Use.</p>
+    					</div>
+    					<div id="text_43X1" class="textC cDiv text_43X1 "></div>
+    					<div id="text_45X1" class="textC cDiv text_45X1 "></div>
+    					
+    					<div id="text_46X1" class="form-group textC cDiv text_46X1" >
+						    <select class="content" id="sel1" data-dropup-auto=“false”>
+						        <option class="option">+852</option>
+						        <option class="option">+86</option>
+						        <option class="option">+853</option>
+					        </select>
+    					</div>
+    					
+    					
+    					<div  class="textC cDiv text_934X1" >
+    						 <input id="userid" class="content" contenteditable="true" placeholder="Phone Number"></input>   						 
+    					</div>
+    					<div class="textC cDiv text_935X1" >
+    						 <input id="password" class="content" contenteditable="true" placeholder="PassWord"></input>   						 
+    					</div>
+    					<div id="image_235X2" class="imageC cDiv image_235X2">
+    						<div class="cutImgOutBox"><img class="cImg" src="./img/img8159694579f0.jpeg"></div>
+    					</div>
+    					<div id="text_1309X2" class="textC cDiv text_1309X2">
+    						<p class="content">Welcome,&nbsp;<br id="mockname">Catherine</p>
+						</div> 				
     				</div>
-    				<div id="pageMask" class="page-mask "></div>
     			</div>
     		</div>
-    	</div>
-    	<div>
-             <input type="text" id="username" class="form-control" placeholder="用户名" required=""></input>
-             <input type="password" id="password" class="form-control" placeholder="密码" required=""></input>
-             <button type="submit" id="logbtn" class="btn btn-primary block full-width m-b">Login</button>
     	</div>
        
     </div>
@@ -55,12 +76,21 @@
 </body>
 <script>
 $(document).ready(function () {
+	var mockname = "Catherine";
+	$("#mockname").val()= mockname;
 	$("#logbtn").bind('click',logincheck);
+	$("#password").keyup(function(){
+		var password = $("#password").val();
+		if(password.length >=6){
+			logincheck()
+		}
+	});
+	
 });
 
 //登录
 function logincheck() {
-	var username = $("#username").val();
+	var userid = $("#userid").val();
 	var password = $("#password").val();
     $.ajax({
         async : false,
@@ -68,7 +98,7 @@ function logincheck() {
         url : "/sys/login",
         contentType: "application/json",
         data:{
-        	  username:username,
+        	  userid:userid,
         	  password:password
         	 },
         success: function (res) {

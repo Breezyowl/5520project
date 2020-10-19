@@ -43,18 +43,18 @@ public class UserController {
     // 简单登录验证
     @ApiOperation(value="获取用户信息", notes="登录系统")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "username", value = "用户", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "userid", value = "用户id", required = true, dataType = "String"),
             @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
     })
     @RequestMapping(value="/login", method=RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<String> checkLogin(HttpServletResponse response,@RequestParam("username") String username, @RequestParam("password") String password){   	
+    public ResponseEntity<String> checkLogin(HttpServletResponse response,@RequestParam("userid") String userid, @RequestParam("password") String password){   	
     	
-    	User loginUser = userService.selectUserByName(username);
+    	User loginUser = userService.selectUserById(userid);
         String userPassword = loginUser.getPassword();
 
         if(userPassword.equals(password)){
-        	Cookie user = new Cookie("username", username);
+        	Cookie user = new Cookie("userid", userid);
         	response.addCookie(user);
             return new ResponseEntity<String>(SUCCESS, HttpStatus.OK);
         }else {

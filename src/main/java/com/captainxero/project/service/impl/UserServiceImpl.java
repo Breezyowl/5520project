@@ -27,7 +27,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      */
 
     @Override
-    public User selectUserByName(String userName) {
-        return userMapper.selectUserByName(userName);
+    public User selectUserById(String userId) {
+        return userMapper.selectUserById(userId);
     }
 }

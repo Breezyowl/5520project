@@ -26,3 +26,10 @@ http://localhost:8080
 5.项目后端接口地址
 http://localhost:8080/swagger-ui.html
 
+6.接口需求
+Expenditure:
+[name:"ABC Movie"，amount: -80.00 HKD, kind:"Entertainment", time:"Today 15:11"]
+
+Income:
+[name:"Salary"，amount: +45433.00 HKD, kind:"Daily Income", time:"Today 15:11"]
+

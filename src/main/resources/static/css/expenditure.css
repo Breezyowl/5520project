@@ -89,6 +89,16 @@
 	color: rgba(166, 166, 166, 1);
 }
 
+/* scroll bar */
+.scroll{
+	width: 100%;
+  	height: 8rem;
+	overflow-x: scroll;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
 /* chart style */
 .line_chart{
 	width: 414px;
@@ -119,4 +129,68 @@
 	font-size: 14px;
 	line-height: 100%;
 	text-align: center;
+}
+
+/* data show */
+.dataTitle{
+	width: 66px;
+	height: 25px;
+	left: 26px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	position: relative;
+	font-family: 'PingFang SC';
+
+}
+
+
+
+.moneyIcon{
+	width: 33px;
+	height: 33px;
+	left: 20px;
+	top: 20px;
+	font-size: 33px;
+	color: rgba(153, 153, 153, 1);
+	text-align: left;
+	position: relative;
+	
+}
+
+.name{
+	height: 25px;
+	left: 40px;
+	color: rgba(80, 80, 80, 1);
+	font-size: 16px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	position: relative;
+	font-family: 'PingFang SC';
+
+}
+
+.kind{
+	left: 40px;
+	color: rgba(80, 80, 80, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: left;
+	position: relative;
+	font-family: 'PingFang SC';
+}
+
+.amount{
+	height: 28px;
+	right: 20px;
+	color: rgba(80, 80, 80, 1);
+	font-size: 18px;
+	line-height: 150%;
+	/* text-align: left; */
+	font-weight: bold;
+	position: relative;
+	font-family: 'PingFang SC';
 }

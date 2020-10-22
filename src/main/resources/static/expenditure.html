@@ -53,7 +53,7 @@
                     <!-- vue -->
     				<div id="app">
                         <div class = "topBox_background">
-                            <div class = "topBox"> 
+                            <div class = "topBox" id="jump_to_MyBalance"> 
                                 <div>
                                     <object data="./img/MyBalance/图标 171.svg" type="image/svg+xml" class = "icon"></object>
                                 </div>
@@ -276,6 +276,12 @@
 
 
     })
+
+    // jump to myBalance
+    var obj = document.getElementById('jump_to_MyBalance');
+    obj.onclick=function(){  
+        window.location.href="./myBalance.html";          
+    }
 
     function drawLineChart(){
         // 基于准备好的dom，初始化echarts实例

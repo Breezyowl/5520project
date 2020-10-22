@@ -28,8 +28,26 @@ http://localhost:8080/swagger-ui.html
 
 6.接口需求
 Expenditure:
-[name:"ABC Movie"，amount: -80.00 HKD, kind:"Entertainment", time:"Today 15:11"]
+[
+    {name:"ABC Movie"，amount: -80.00 HKD, kind:"Entertainment", time:"Today 15:11"}, 
+    {name:"ABC Movie"，amount: -80.00 HKD, kind:"Entertainment", time:"Today 15:11"},
+]
 
 Income:
-[name:"Salary"，amount: +45433.00 HKD, kind:"Daily Income", time:"Today 15:11"]
+[
+    {name:"Salary"，amount: +45433.00 HKD, kind:"Daily Income", time:"Today 15:11"},
+    {name:"Salary"，amount: +45433.00 HKD, kind:"Daily Income", time:"Today 15:11"},
+]
+
+Transactions:[
+    {name:"ABC Movie",kind:"Entertainment",time:"Today 15:11",amount:"-80.00 HKD"},
+    {name:"ABC Movie",kind:"Entertainment",time:"Today 15:11",amount:"-80.00 HKD"},
+]
+
+Total Assets:[
+    {name:"HSBC - Card A", kind:"MASTERCARD", number:"1312-3215-0001-5023", amount:"- 4322.00 HKD", due:"DUE date: Sep 30 2020", logo_url:"./img/MyBalance/图片 19.png"},
+
+    {name:"HSBC - Card A", kind:"MASTERCARD", number:"1312-3215-0001-5023", amount:"- 4322.00 HKD", due:"DUE date: Sep 30 2020", logo_url:"./img/MyBalance/图片 19.png"},
+]
+
 

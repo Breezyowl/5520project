@@ -1,0 +1,352 @@
+.image_up{
+	width: 414px;
+	height: 221px;
+	left: 0px;
+	opacity: 100%;
+	background-size: 100% 100%;
+	background-image: url(../img/homeview/homeUp.png);
+}
+.fly_page{
+	position: absolute;
+	width: 332px;
+	height: 181px;
+	left: 41px;
+	top: 86px;
+	color: rgba(132, 132, 132, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 16px;
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	font-weight: bold;
+}
+.hideIcon{
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	left: 19px;
+	top: 17px;
+	font-size: 26px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/homeview/hideicon.svg);
+	background-size: 100% 100%;
+}
+.cardicon{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 24px;
+	top: 14px;
+	font-size: 32px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/homeview/card.svg);
+	background-size: 100% 100%;
+}
+.total{
+	position: absolute;
+	width: 176px;
+	height: 34px;
+	left: 77px;
+	top: 23px;
+	color: rgba(49, 166, 145, 1);
+	font-size: 22px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(153, 153, 153, 1);
+}
+.cal_balance{
+	position: absolute;
+	width: 120px;
+	height: 29px;
+	left: 110px;
+	top: 151px;
+	color: rgba(37, 146, 127, 1);
+	font-size: 16px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+.monthdesc{
+	position: absolute;
+    width: 176px;
+    height: 25px;
+    left: 77px;
+    top: 60px;
+	color: rgba(132, 132, 132, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	font-weight: bold;
+}
+.income{
+	position: absolute;
+    width: 176px;
+    height: 25px;
+    left: 77px;
+    top: 85px;
+	color: rgba(132, 132, 132, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	font-weight: bold;
+}
+.cost{
+	position: absolute;
+    width: 176px;
+    height: 25px;
+    left: 77px;
+    top: 110px;
+	color: rgba(132, 132, 132, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 2px solid rgba(153, 153, 153, 1);
+}
+.bankcard{
+	position: absolute;
+	width: 414px;
+	height: 56px;
+	left: -1px;
+	top: 279px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+.bankcarddesc{
+	position: absolute;
+	left: 82px;
+	top: 17px;
+	width: 250px;
+	height: 27px;
+	color: rgba(80, 80, 80, 1);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+.payset{
+	position: absolute;
+	width: 414px;
+	height: 59px;
+	top: 345px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+.payseticon{
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	left: 24px;
+	top: 14px;
+	font-size: 32px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/homeview/payset.svg);
+	background-size: 100% 100%;
+}
+.bellicon{
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	left: 320px;
+	top: 18px;
+	font-size: 28px;
+	color: rgba(49, 166, 145, 1);
+	background-image: url(../img/homeview/bell.svg);
+	background-size: 100% 100%;
+}
+.latestoffer{
+	position: absolute;
+	width: 414px;
+	height: 55px;
+	left: 0px;
+	top: 418px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+}
+.midtitle{
+	position: absolute;
+	width: 110px;
+	height: 28px;
+	left: 19px;
+	top: 14px;
+	color: rgba(0, 0, 0, 0.87);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+.righttitle{
+	position: absolute;
+	width: 42px;
+	height: 23px;
+	left: 314px;
+	top: 14px;
+	color: rgba(0, 0, 0, 0.8857142857142857);
+	font-size: 14px;
+	line-height: 140%;
+	text-align: left;
+}
+.offerBox{
+	position: absolute;
+	width: 414px;
+	height: 190px;
+	left: 0px;
+	top: 472px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	line-height: 150%;
+	overflow-y: auto; 
+	overflow-x:hidden;
+}
+.offerdetail{
+	position:relative;
+	width: 414px;
+	height: 87px;
+	margin-bottom:6px;
+	border-bottom: 1px solid rgba(153, 153, 153, 1);
+}
+
+/*  去除滚动条 */
+.offerBox::-webkit-scrollbar {
+    width: 0px;
+  }
+.bankGicon{
+	position:absolute;
+	width: 68px;
+	height: 68px;
+	left: 11px;
+	top: 6px;
+	background-size: 100% 100%;
+}
+.detailtitle{
+	position:absolute;
+	width: 250px;
+	height: 28px;
+	left: 87px;
+	bottom: 55px;
+	
+	color: rgba(0, 0, 0, 0.87);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+	text-overflow:ellipsis;/*设置隐藏部分为省略号*/
+	overflow: hidden;/*设置隐藏*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;/*设置显示行数，此处为2行，可设置其他数字*/
+    -webkit-box-orient: vertical;
+}
+.detailcontent{
+	position:absolute;
+	width: 250px;
+	height: 37px;
+	left: 87px;
+	top: 35px;
+	color: rgba(0, 0, 0, 0.5438462409);
+	font-size: 14px;
+	line-height: 140%;
+	text-align: left;
+	text-overflow:ellipsis;/*设置隐藏部分为省略号*/
+	overflow: hidden;/*设置隐藏*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;/*设置显示行数，此处为2行，可设置其他数字*/
+    -webkit-box-orient: vertical;
+}
+
+.bottomArea{
+	display: flex;
+	position:absolute;
+	width: 414px;
+	height: 65px;
+	top: 671px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+}
+.cover{
+	zoom:0;
+	overflow:auto;
+}
+.bottomicon{
+	width: 31px;
+	height: 31px;
+	font-size: 31px;
+	color: rgba(80, 80, 80, 1);
+	background-size: 100% 100%;
+}
+.bottomicondesc{
+	width: 52px;
+	height: 16px;
+	color: rgba(80, 80, 80, 1);
+	font-size: 13px;
+	line-height: 150%;
+	text-align: center;
+}
+.bottomicon1{
+	position:absolute;
+	left: 71px;
+	top: 10px;
+}
+.bottomidesc1{
+	position:absolute;
+	left: 61px;
+	top: 41px;
+}
+.bottomicon2{
+	position:absolute;
+	left: 191px;
+	top: 10px;
+}
+.bottomidesc2{
+	position:absolute;
+	left: 181px;
+	top: 41px;
+}
+.bottomicon3{
+	position:absolute;
+	left: 305px;
+	top: 10px;
+}
+.bottomidesc3{
+	position:absolute;
+	width: 58px;
+	left: 292px;
+	top: 41px;
+}
+
+.rightarrow{
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/homeview/rightarrow.svg);
+	background-size: 100% 100%;
+	border:none
+}
+.arrowone{
+	position: absolute;
+	left: 279px;
+	top: 87px;
+}
+.arrowtwo{
+	position: absolute;
+	left: 362px;
+	top: 20px;
+}
+.arrowdetail{
+	position: absolute;
+	left: 362px;
+	top: 20px;
+}

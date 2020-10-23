@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html style="font-size: 64.6875px">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>FFPAY | Login</title>
+
+    <link href="css/bootstrap.min.css"  rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css"  rel="stylesheet">
+    <link href="css/animate.css"  rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"  type= "text/javascript"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <script src="js/common.js"  type= "text/javascript"></script>
+</head>
+
+<body id="protoPreview" class=" overflowHidden">
+	
+    <div class="body-wrapper">
+    	<div class="phone-view-box">
+    		<div class="model-wrapper" style="transform: scale(0.72);">
+    			<div class="mobile-model"></div>
+    		</div>
+    		<div id="appContainer" class="mobile-wrapper">
+    			<div id="pageContainer" class="pageContainer" data-scale="72">
+    				<!-- 顶部显示区域 -->
+    				<div class="image_up"></div>
+    				<div class="fly_page">
+    					<div id ="hideMyInfo" class="hideIcon"></div>
+    					<p id ="total"class="total">123,456.00 HKD </p>
+    					<p class="monthdesc">My balance for this month</p>
+    					<p id ="income" class="income">12345,00.00 HKD </p>
+    					<p id ="cost" class="cost">- 345.00 HKD </p>
+    					<p id ="cal_balance" class="cal_balance">12,000.00 HKD</p>
+    					<div id= "mybalance" class="rightarrow arrowone"></div>
+    				</div>
+    				
+    				<!-- 设置区域 -->
+    				<div id="bankcard" class="bankcard">
+    					<div  class="cardicon"></div>
+    					<div class="bankcarddesc">
+    						My Bank Cards
+    					</div>
+    					<div class="rightarrow arrowtwo"></div>
+    				</div>
+    				<div id="payset" class="payset">
+    					<div  class="payseticon"></div>
+    					<div class="bankcarddesc">
+    						My Payment Setting
+    					</div>
+    					<div  class="bellicon"></div>
+    					<div class="rightarrow arrowtwo"></div>
+    				</div>
+    				<!-- 订单区域 -->
+    				<div id="latestoffer" class="latestoffer">
+    					<div class="midtitle">Latest Offers</div>
+    					<div class="righttitle">More</div>
+    					<div class="rightarrow arrowtwo"></div>
+    				</div>
+    				<div class="offerBox">
+    					<div class="offerdetail">
+    						<div class="bankGicon" style="background-image: url(./img/homeview/hsbc.png)"></div>
+    				
+    						<div class="detailtitle">Enjoy $30 Off Your Orders</div>
+	    					<div class="detailcontent">Spend with HSBC Red Card Deliver</div>
+    					
+    						<div class="rightarrow arrowdetail"></div>
+    					</div>  
+    					<div class="offerdetail">
+    						<div class="bankGicon" style="background-image: url(./img/homeview/boc.png)"></div>					
+	    						<div class="detailtitle">Up to $60 instant discount</div>
+	    						<div class="detailcontent">Spend with BoC Pay at Welcome & its specialty stores</div>
+    						<div class="rightarrow arrowdetail"></div>
+    					</div>
+    					<div class="offerdetail">
+    						<div class="bankGicon" style="background-image: url(./img/homeview/boc.png)"></div>					
+	    						<div class="detailtitle">$10 student discount</div>
+	    						<div class="detailcontent">Apple App Store</div>
+    						<div class="rightarrow arrowdetail"></div>
+    					</div>    				
+    				</div>
+    				
+    				<!-- 底部按钮区域 -->
+    				<div class="bottomArea">
+    					<div  id="scan" class="cover">
+    						<div class="bottomicon bottomicon1" style="background-image: url(./img/homeview/scan.svg)"></div>
+    						<div class="bottomicondesc bottomidesc1">scan</div>
+    					</div>
+    					<div  id="transfer" class="cover">
+    						<div class="bottomicon bottomicon2" style="background-image: url(./img/homeview/transfer.svg)"></div>
+    						<div class="bottomicondesc bottomidesc2">Transfer</div>
+    					</div>
+    					<div id="qrcode" class="cover">
+    						<div class="bottomicon bottomicon3" style="background-image: url(./img/homeview/qrcode.svg)"></div>
+    						<div class="bottomicondesc bottomidesc3">QR Code</div>
+    					</div>
+    					
+    					
+    				</div>
+    				
+    				</div>
+    				
+    			</div>
+    		</div>
+    	</div>
+       
+    </div>
+
+
+</body>
+<script>
+$(document).ready(function () {
+	$("#hideMyInfo").bind('click',hideMyInfo);
+	$("#mybalance").bind('click',jumptoMyBalance);
+	$("#bankcard").bind('click',jumptoBankcard);
+	$("#payset").bind('click',jumptoPayset);
+	$("#scan").bind('click',jumptoScan);
+	$("#transfer").bind('click',jumptoTransfer);
+	$("#qrcode").bind('click',jumptoQrCode);
+	("#hideMyInfo").bind('click',hideMyInfo);
+	
+});
+var myHis = new Array();
+
+function jumptoMyBalance() {
+	window.location.href='./myBalance.html';
+};
+function jumptoBankcard() {
+	window.location.href='./mybankcard/babnkcard.html';
+};
+function jumptoPayset() {
+	window.location.href='./payset.html';
+};
+function jumptoScan() {
+	window.location.href='./scan.html';
+};
+function jumptoTransfer() {
+	window.location.href='./transfer.html';
+};
+function jumptoQrCode() {
+	window.location.href='./qrcode.html';
+};
+
+function hideMyInfo() {
+	var total =  $("#total").text();
+	var income =  $("#income").text();
+	var cost =  $("#cost").text();
+	var cal =  $("#cal_balance").text();
+	
+	if( myHis.length == 0){
+		myHis.push(total);
+		myHis.push(income);
+		myHis.push(cost);
+		myHis.push(cal);
+		$("#total").text(generateStr(total.length));
+		$("#income").text(generateStr(income.length));
+		$("#cost").text(generateStr(cost.length));
+		$("#cal_balance").text(generateStr(cal.length));
+	}else{
+		$("#total").text(myHis[0]);
+		$("#income").text(myHis[1]);
+		$("#cost").text(myHis[2]);
+		$("#cal_balance").text(myHis[3]);
+		myHis.length = 0;
+	}
+	
+
+
+};
+</script>
+</html>

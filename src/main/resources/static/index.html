@@ -63,7 +63,7 @@
     						<div class="cutImgOutBox"><img class="cImg" src="./img/img8159694579f0.jpeg"></div>
     					</div>
     					<div id="text_1309X2" class="textC cDiv text_1309X2">
-    						<p class="content">Welcome,&nbsp;<br id="mockname">Catherine</p>
+    						<p class="content">Welcome,&nbsp;<br id="mockname"></p>
 						</div> 				
     				</div>
     			</div>
@@ -77,7 +77,7 @@
 <script>
 $(document).ready(function () {
 	var mockname = "Catherine";
-	$("#mockname").val()= mockname;
+	$("#mockname").text(mockname);
 	$("#logbtn").bind('click',logincheck);
 	$("#password").keyup(function(){
 		var password = $("#password").val();

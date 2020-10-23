@@ -189,3 +189,41 @@
     line-height: 150%;
     outline: 0;
 }
+
+.topBox_background{
+	background-image: url(../img/common/building.png);
+	width: 414px;
+	height: 90px;
+}
+
+.topBox_background .topBox{
+	/* 背景图片设置 */
+	background-image: url(../img/common/topBackground.png);
+	opacity: 100%;
+	width: 414px;
+	height: 90px;
+
+}
+.topBox .text{
+	width: 178px;
+	height: 48px;
+	left: 120px;
+	top: 26px;
+	color: rgba(255, 255, 255, 1);
+	font-size: 32px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'PingFang SC';
+	position: absolute;
+}
+.topBox .icon{
+	opacity: 100%;
+	width: 35px;
+	height: 35px;
+	left: 30px;
+	top: 33px;
+	font-size: 35px;
+	color: rgba(229, 229, 229, 1);
+	position: absolute;
+}

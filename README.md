@@ -27,27 +27,41 @@ http://localhost:8080
 http://localhost:8080/swagger-ui.html
 
 6.接口需求
+expenditure.html
+接口1
 Expenditure:
 [
     {name:"ABC Movie"，amount: -80.00 HKD, kind:"Entertainment", time:"Today 15:11"}, 
     {name:"ABC Movie"，amount: -80.00 HKD, kind:"Entertainment", time:"Today 15:11"},
 ]
-
+接口2
 Income:
 [
     {name:"Salary"，amount: +45433.00 HKD, kind:"Daily Income", time:"Today 15:11"},
     {name:"Salary"，amount: +45433.00 HKD, kind:"Daily Income", time:"Today 15:11"},
 ]
 
+myBalance.html
+接口1
 Transactions:[
     {name:"ABC Movie",kind:"Entertainment",time:"Today 15:11",amount:"-80.00 HKD"},
     {name:"ABC Movie",kind:"Entertainment",time:"Today 15:11",amount:"-80.00 HKD"},
 ]
-
+接口2
 Total Assets:[
     {name:"HSBC - Card A", kind:"MASTERCARD", number:"1312-3215-0001-5023", amount:"- 4322.00 HKD", due:"DUE date: Sep 30 2020", logo_url:"./img/MyBalance/图片 19.png"},
 
     {name:"HSBC - Card A", kind:"MASTERCARD", number:"1312-3215-0001-5023", amount:"- 4322.00 HKD", due:"DUE date: Sep 30 2020", logo_url:"./img/MyBalance/图片 19.png"},
 ]
+
+paySet.html
+接口1
+newOfferInfo:[ {name:"HSBC",card_type:"Card A", card_num:"1312-3215-0001-5023", offer:"MUSIC", content:"$1 Cash Dollar to Redeem an extra concert ticket", logo:"../img/MyBalance/图片 19.png", accept:"false"} ]
+注：此接口需要获取到最新的offer，并选择接受还是忽略，你给我传过来的时候应该是false， 如果选择接受，我会把accept值设置成true，然后此界面会刷新，new offer提示隐藏，因为没有new offer了，并且下面的payment setting应该是我接受了最新offer的data，解释的也不是很好，有啥问题随时微信沟通
+
+
+
+
+
 
 

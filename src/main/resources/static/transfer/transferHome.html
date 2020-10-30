@@ -133,8 +133,9 @@
 	    					<input id = "msgContent" class="msgContent" placeholder="Message" ></input>
 	    				</div>
 	    				
-	    				<button id="clearBt" class="bottomBt bt1">Clear</button>
-	    				<button id="nextBt" class="bottomBt bt2">Next</button>
+	    				<button id="clearBt" class="bottomBt bt1" >Clear</button>
+	    				<button id="nextBt"  class="bottomBt bt2" data-toggle="popover" data-placement="top" 
+			data-content="顶部的 Popover 中的一些内容" >Next</button>
 	    			</div>
     				
     				<div  id="page2" class ="page2" >
@@ -190,9 +191,9 @@ $(document).ready(function () {
 	$("#sub2").bind('click',switchtoPage2);
 	$("#sub3").bind('click',switchtoPage3);
 	$("#clearBt").bind('click',clearFunc);
-	$("#nextBt").bind('click',jumptoCardSucess);
-	$("#scan").bind('click',jumptoScan);
 	
+	$("#scan").bind('click',jumptoScan);
+	$('#nextBt').bind('click',jumptoCardSucess);
 });
 
 
@@ -207,7 +208,7 @@ function switchtoPage1() {
 };
 function switchtoPage2() {
 	$("#sub2").css("color","#31a691")
-	$("#sub1").css("color","#a6a6a6")
+	$('#sub1').css("color","#a6a6a6")
 	$('#page1').hide();
 	$('#page2').show();	
 };
@@ -216,15 +217,23 @@ function switchtoPage3() {
 };
 
 function clearFunc() {
-	$("#msgAmount").val("");
+	$('#msgAmount').val("");
 	$('#msgContent').val("");
 };
 
 function jumptoCardSucess() {
-	window.location.href='./transferSucc.html';
+	var amt = $("#msgAmount").val();
+	if(typeof amt == "undefined" || amt == null || amt == ""){
+		
+    }else{
+    	window.location.href='./transferSucc.html';;
+    }
+	
 };
 function jumptoScan() {
 	window.location.href='./scan.html';
 };
+
+	
 </script>
 </html>

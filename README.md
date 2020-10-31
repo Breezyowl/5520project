@@ -59,6 +59,18 @@ paySet.html
 newOfferInfo:[ {name:"HSBC",card_type:"Card A", card_num:"1312-3215-0001-5023", offer:"MUSIC", content:"$1 Cash Dollar to Redeem an extra concert ticket", logo:"../img/MyBalance/图片 19.png", accept:"false"} ]
 注：此接口需要获取到最新的offer，并选择接受还是忽略，你给我传过来的时候应该是false， 如果选择接受，我会把accept值设置成true，然后此界面会刷新，new offer提示隐藏，因为没有new offer了，并且下面的payment setting应该是我接受了最新offer的data，解释的也不是很好，有啥问题随时微信沟通
 
+接口2
+paymentSetData:[
+                    {name:"Food", offer:"2.4% cash dollar rebate", card:"Card A", logo:"../img/MyPaymentSettings/图标 44.svg"},
+                    {name:"Music", offer:"", card:"Card B", logo:"../img/MyPaymentSettings/图标 45.svg"},
+                    {name:"Supermarket", offer:"1% cash dollar rebate", card:"Card C", logo:"../img/MyPaymentSettings/图标 46.svg"},
+                    {name:"Others", offer:"", card:"card A", logo:"../img/MyPaymentSettings/图标 47.svg"},
+                ],
+
+recommendSet.html
+接口1
+注：这个接口我们讨论一下，逻辑关系我没整明白
+
 
 
 

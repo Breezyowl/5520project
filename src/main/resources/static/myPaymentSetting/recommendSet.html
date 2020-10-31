@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html style="font-size: 64.6875px">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>My Payment Settings</title>
+    
+    <!-- Expenditure 页面 css style -->
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/recommendSet.css" rel="stylesheet">
+    
+    <!-- Bootstrap 及 js 引用 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <!-- vue CDN引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- element UI 引入 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    
+</head>
+
+<body id="protoPreview" class=" overflowHidden">
+	
+    <div class="body-wrapper">
+    	<div class="phone-view-box">
+    		<div class="model-wrapper" style="transform: scale(0.72);">
+    			<div class="mobile-model"></div>
+    		</div>
+    		<div id="appContainer" class="mobile-wrapper">
+    			<div id="pageContainer" class="pageContainer" data-scale="72">
+                    <!-- vue -->
+    				<div id="app">
+                        <!-- top box -->
+                        <div class = "topBox_background">
+                            <div class = "topBox"> 
+                                <div>
+                                    <object data="../img/MyBalance/图标 171.svg" type="image/svg+xml" class = "icon"></object>
+                                </div>
+                                <div class = "text" id="jump_to_paySet">
+                                    My Payment Settings
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- recommand set box -->
+                        <div class="recommend">
+                            <div class="scroll">
+                                <!-- title -->
+                                <el-col :span="16">
+                                    <div class="recommend_title">Recommended Settings</div>
+                                </el-col>
+                                <el-col :span="8">
+                                    <el-switch
+                                        v-model="top_switch"
+                                        :active-value="1"
+                                        :inactive-value="2"
+                                        active-color="rgba(49, 166, 145, 1)"
+                                        class="topSwitch">
+                                    </el-switch>
+                                </el-col>
+                                <!-- data loop -->
+                                <div v-for="item in paymentSetData" :key="item.name">
+                                    <div class="singleItem">
+                                        <hr class="cross_line">
+                                        <el-col :span="4">
+                                            <object :data=item.logo type="image/svg+xml" class="recommend_logo"></object>
+                                        </el-col>
+                                        <el-col :span="8">
+                                            <el-row class="recommend_name">
+                                                {{item.name}}
+                                            </el-row>
+                                            <el-row class="recommend_offer">
+                                                {{item.offer}}
+                                            </el-row>
+                                        </el-col>
+                                        <el-col :span="4" class="recommend_card">
+                                            {{item.card}}
+                                        </el-col>
+                                        <el-col :span="4" >
+                                            <el-switch
+                                                v-model="item.if_accept"
+                                                :active-value="1"
+                                                :inactive-value="2"
+                                                active-color="rgba(49, 166, 145, 1)"
+                                                @change="setEnable(item.name, item.if_accept)"
+                                                class="recommend_switch">
+                                            </el-switch>
+                                        </el-col>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- changing my settings -->
+                        <div class="changeSet_box">
+                            <el-col :span="8">
+                                <object data="../img/MyPaymentSettings/图标 61.svg" type="image/svg+xml" class="changeSet_logo"></object>
+                            </el-col :span="16">
+                            <el-col class="changeSet_text">
+                                Add A New Card
+                            </el-col>
+                        </div>
+                    </div>
+    			</div>
+    		</div>
+    	</div>
+       
+    </div>
+
+
+</body>
+
+
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+
+        data(){
+            return{
+                // top_switch
+                top_switch: 2,
+
+                // default middle switch
+                state: 1,
+
+                // 获取 payment settings 数据
+                paymentSetData:[
+                    {name:"Food", offer:"2.4% cash dollar rebate", card:"Card A", logo:"../img/MyPaymentSettings/图标 44.svg", if_accept:1},
+                    {name:"Music", offer:"$1 cash dollar to get a ticket", card:"Card A", logo:"../img/MyPaymentSettings/图标 45.svg", if_accept:1},
+                    {name:"Supermarket", offer:"1% cash dollar rebate", card:"Card C", logo:"../img/MyPaymentSettings/图标 46.svg", if_accept:1},
+                    {name:"Car", offer:"Discount 10% off", card:"Card D", logo:"../img/MyPaymentSettings/图标 48.svg", if_accept:2},
+                    {name:"Book", offer:"", card:"Card B", logo:"../img/MyPaymentSettings/图标 49.svg", if_accept:2},
+                    {name:"Online", offer:"1% cash dollar rebate", card:"Card D", logo:"../img/MyPaymentSettings/图标 50.svg", if_accept:2},
+                    {name:"Airport", offer:"Discount 5% off", card:"Card C", logo:"../img/MyPaymentSettings/图标 51.svg", if_accept:2},
+                    {name:"Others", offer:"", card:"card A", logo:"../img/MyPaymentSettings/图标 47.svg",if_accept:1},
+                ],
+            }
+        },
+        
+
+        created:
+            function(){
+            },
+
+        methods:{
+            // 这个function可以删除
+            setEnable(name, isShow){
+                console.log(this.paymentSetData)
+            }
+        }
+    })
+
+    // jump to paySet
+    var paySet = document.getElementById('jump_to_paySet');
+    paySet.onclick=function(){  
+        window.location.href="./paySet.html";          
+    }
+
+
+ </script>
+</html>

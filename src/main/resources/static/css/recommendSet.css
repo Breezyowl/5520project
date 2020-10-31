@@ -1,0 +1,197 @@
+@font-face{
+    font-family: 'PingFang SC';
+	/* src : url('../fonts/PingFang-SC-Regular.ttf'); */
+    src : url('../fonts/PingFang-SC-Regular.ttf');
+	
+}
+
+/* top box */
+.topBox_background{
+	/* background-image: url(../img/MyBalance/图片\ 18.png); */
+	background-image: url(../img/MyBalance/图片\ 18.png);
+
+	width: 414px;
+	height: 90px;
+}
+
+.topBox_background .topBox{
+	/* 背景图片设置 */
+	background-image: url(../img/MyBalance/topBackground.png);
+	opacity: 100%;
+	width: 414px;
+	height: 90px;
+
+}
+
+.topBox .text{
+	width: 279px;
+	height: 38px;
+	left: 74px;
+	top: 31px;
+	color: rgba(255, 255, 255, 1);
+	font-size: 25px;
+	line-height: 150%;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'PingFang SC';
+	position: absolute;
+}
+.topBox .icon{
+	opacity: 100%;
+	width: 35px;
+	height: 35px;
+	left: 30px;
+	top: 33px;
+	font-size: 35px;
+	color: rgba(229, 229, 229, 1);
+	position: absolute;
+}
+
+
+/* recommend set */
+
+/* scroll bar */
+.scroll{
+	width: 100%;
+  	height: 100%;
+	overflow-x: scroll;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.recommend{
+	width: 414px;
+    height: 513px; 
+    background-color: rgba(255, 255, 255, 1);
+    position: absolute;
+}
+
+.recommend_title{
+	width: 263px; 
+	height: 33px;
+	left: 23px;
+	top: 7px;
+	color: rgba(80, 80, 80, 1);
+	font-size: 22px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	font-family: 'PingFang SC';
+	position: relative;
+}
+
+.topSwitch{
+    width: 44px;
+	height: 22px;
+	left: 56px;
+    top: 12px;
+    position: relative;
+}
+
+.cross_line{
+	width: 380px;
+	height: 1px;
+	/* left: 16px; */
+	top: 15px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(153, 153, 153, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	position: relative;
+}
+.recommend_logo{
+	width: 31px;
+	height: 31px;
+	left: 20px;
+	top: 16px;
+	bottom: 11px;
+	font-size: 31px;
+	color: rgba(153, 153, 153, 1);
+	position: relative;
+}
+.recommend_name{
+	width: 74px;
+	height: 28px;
+	left: 20px;
+	top: 16px;
+	color: rgba(0, 0, 0, 0.5413269928);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+    font-family: 'PingFang SC';
+	position: relative;
+}
+
+.recommend_offer{
+	width: 150px;
+	height: 20px;
+	left: 20px;
+	top: 10px;
+	color: rgba(0, 0, 0, 0.5413269928);
+	font-size: 11px;
+	line-height: 150%;
+	text-align: left;
+    font-family: 'PingFang SC';
+	position: relative;
+}
+
+.recommend_card{
+	width: 60px;
+	height: 26px;
+	left: 45px;
+	top: 19px;
+	color: rgba(49, 166, 145, 1);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+    font-family: 'PingFang SC';
+	position: relative;
+}
+
+.recommend_switch{
+    width: 44px;
+	height: 23px;
+	left: 56px;
+    top: 19px;
+    position: relative;
+}
+
+/* changing my settings */
+.changeSet_box{
+	width: 370px;
+	height: 51px;
+	left: 19px;
+	top: 631px;
+	border-color: rgba(128, 128, 128, 1);
+	border-style:dashed;
+	border-radius: 4px;
+	border-width: 2px;
+	font-size: 15px;
+	line-height: 150%;
+	text-align: center;
+    position: absolute;
+}
+
+.changeSet_logo{
+    width: 15px;
+	height: 15px;
+	left: 37px;
+	top: 19px;
+	font-size: 15px;
+    color: rgba(0, 0, 0, 1);
+    position: relative;
+}
+
+.changeSet_text{
+	color: rgba(80, 80, 80, 1);
+	bottom: 13%;
+	font-size: 15px;
+	line-height: 150%;
+	text-align: center;
+	font-family: 'PingFang SC';
+	position: relative;
+}
+

@@ -158,7 +158,7 @@
 
                         <!-- changing my settings -->
                         <div class="changeSet_box">
-                            <div class="changeSet_text"> Change My Settings</div>
+                            <div class="changeSet_text" id="jump_to_changeSet"> Change My Settings</div>
                         </div>
 
                     
@@ -242,6 +242,12 @@
     var recommendSet = document.getElementById('jump_to_recommendSet');
     recommendSet.onclick=function(){  
         window.location.href="./recommendSet.html";          
+    }
+
+    // jump to change my settings
+    var changeSet = document.getElementById('jump_to_changeSet');
+    changeSet.onclick=function(){  
+        window.location.href="./changeSet.html";          
     }
 
  </script>

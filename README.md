@@ -71,6 +71,27 @@ recommendSet.html
 接口1
 注：这个接口我们讨论一下，逻辑关系我没整明白
 
+changeSet.html
+接口1
+changeSetData:[
+                    {name:"Food", offer:"2.4% cash dollar rebate", card:"Card A", logo:"../img/MyPaymentSettings/图标 44.svg", if_accept:1},
+                    {name:"Music", offer:"$1 cash dollar to get a ticket", card:"Card A", logo:"../img/MyPaymentSettings/图标 45.svg", if_accept:1},
+                    {name:"Supermarket", offer:"1% cash dollar rebate", card:"Card C", logo:"../img/MyPaymentSettings/图标 46.svg", if_accept:1},
+                    {name:"Car", offer:"", card:"Card D", logo:"../img/MyPaymentSettings/图标 48.svg", if_accept:2},
+                    {name:"Book", offer:"", card:"Card B", logo:"../img/MyPaymentSettings/图标 49.svg", if_accept:2},
+                    {name:"Online", offer:"", card:"Card D", logo:"../img/MyPaymentSettings/图标 50.svg", if_accept:2},
+                    {name:"Airport", offer:"", card:"Card C", logo:"../img/MyPaymentSettings/图标 51.svg", if_accept:2},
+                    {name:"Others", offer:"", card:"Card A", logo:"../img/MyPaymentSettings/图标 47.svg",if_accept:1},
+                ],
+
+chooseCard.html
+接口1
+cardData:[
+                    {name:"HSBC", card:"Card A", kind:"MASTERCARD", card_num:"1312-3215-0001-5023", logo:"../img/MyPaymentSettings/图片 19.png", if_choose:1},
+                    {name:"BOC", card:"Card B", kind:"Bank Account", card_num:"897-123452-213", logo:"../img/MyPaymentSettings/图片 21.png", if_choose:0},
+                    {name:"HSB", card:"Card C", kind:"Bank Account", card_num:"371-333333-668", logo:"../img/MyPaymentSettings/图片 251 (1).png", if_choose:0},
+                ],
+
 
 
 

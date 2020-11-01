@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html style="font-size: 64.6875px">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>My Payment Settings</title>
+    
+    <!-- Expenditure 页面 css style -->
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/chooseCard.css" rel="stylesheet">
+    
+    <!-- Bootstrap 及 js 引用 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <!-- vue CDN引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- element UI 引入 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    
+</head>
+
+<body id="protoPreview" class=" overflowHidden">
+    <div class="body-wrapper">
+    	<div class="phone-view-box">
+    		<div class="model-wrapper" style="transform: scale(0.72);">
+    			<div class="mobile-model"></div>
+    		</div>
+    		<div id="appContainer" class="mobile-wrapper">
+    			<div id="pageContainer" class="pageContainer" data-scale="72">
+                    <!-- vue -->
+    				<div id="app">
+                        <!-- top box -->
+                        <div class = "topBox_background">
+                            <div class = "topBox"> 
+                                <div>
+                                    <object data="../img/MyBalance/图标 171.svg" type="image/svg+xml" class = "icon"></object>
+                                </div>
+                                <div class = "text" id="jump_to_changeSet">
+                                    My Payment Settings
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="title_box">
+                            <div class = "title_text">Choose A Card</div>
+                        </div>
+                        <br>
+
+                        <!-- loop -->
+                        <div class="loop">
+                            <div class="scroll">
+                                <div v-for="item in cardData" :key="item.name">
+                                    <br>
+                                    <div class="item_box">
+                                        <el-col :span="6">
+                                            <img :src="item.logo" class="card_logo">
+                                        </el-col>
+                                        <el-col :span="18" class="card_text">
+                                            <el-row>{{item.name}} - {{item.card}}</el-row>
+                                            <el-row>{{item.kind}}</el-row>
+                                            <el-row>{{item.card_num}}</el-row>
+                                        </el-col>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- changing my settings -->
+                        <div class="changeSet_box">
+                            <el-col :span="8">
+                                <object data="../img/MyPaymentSettings/图标 61.svg" type="image/svg+xml" class="changeSet_logo"></object>
+                            </el-col :span="16">
+                            <el-col class="changeSet_text" id="jump_to_bankcardScan">
+                                Add A New Card
+                            </el-col>
+                        </div> 
+                    </div>
+    			</div>
+    		</div>
+    	</div>
+       
+    </div>
+
+
+</body>
+
+
+
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+
+        data(){
+            return{
+
+                // 获取 cards 数据
+                cardData:[
+                    {name:"HSBC", card:"Card A", kind:"MASTERCARD", card_num:"1312-3215-0001-5023", logo:"../img/MyPaymentSettings/图片 19.png", if_choose:1},
+                    {name:"BOC", card:"Card B", kind:"Bank Account", card_num:"897-123452-213", logo:"../img/MyPaymentSettings/图片 21.png", if_choose:0},
+                    {name:"HSB", card:"Card C", kind:"Bank Account", card_num:"371-333333-668", logo:"../img/MyPaymentSettings/图片 251 (1).png", if_choose:0},
+                ],
+                
+            }
+        },
+        
+
+        created:
+            function(){
+            },
+
+        methods:{
+        }
+    })
+
+    // jump to change my settings
+    var changeSet = document.getElementById('jump_to_changeSet');
+    changeSet.onclick=function(){  
+        window.location.href="./changeSet.html";          
+    }
+
+    // jump to scan card
+    var bankcard_scan = document.getElementById('jump_to_bankcardScan');
+    bankcard_scan.onclick=function(){  
+        window.location.href="../mybankcard/scan.html";          
+    }
+
+
+ </script>
+</html>

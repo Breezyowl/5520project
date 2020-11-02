@@ -273,9 +273,10 @@
 	position: absolute;
 	width: 23px;
 	height: 23px;
-	left: 90%;
+	left: 85.5%;
 	top: 40%;
 	color: rgba(80, 80, 80, 1);
+	/* #31a691 #221f1f */
 	box-shadow: 0 0 3px #221f1f;
 	border-radius: 12px;
 	font-size: 18px;
@@ -287,10 +288,10 @@
 	position: absolute;
 	width: 10px;
 	height: 10px;
-	left: 91.8%;
-    top: 45.3%;
+	left: 87.2%;
+    top: 45.8%;
 	color: rgba(80, 80, 80, 1);
-	/* background-color: rgba(49, 166, 145, 1); */
+	background-color: #ffffff;
 	border-radius: 5px;
 	font-size: 18px;
 	line-height: 150%;

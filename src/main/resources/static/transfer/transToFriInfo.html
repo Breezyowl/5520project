@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html style="font-size: 64.6875px">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>FFPAY | Login</title>
+
+    <link href="../css/bootstrap.min.css"  rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css"  rel="stylesheet">
+    <link href="../css/animate.css"  rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/transferInfo.css" rel="stylesheet">
+    <!-- Mainly scripts -->
+    <script src="../js/jquery-3.1.1.min.js"  type= "text/javascript"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="protoPreview" class=" overflowHidden">
+	
+    <div class="body-wrapper">
+    	<div class="phone-view-box">
+    		<div class="model-wrapper" style="transform: scale(0.72);">
+    			<div class="mobile-model"></div>
+    		</div>
+    		<div id="appContainer" class="mobile-wrapper">
+    			<div id="pageContainer" class="pageContainer" data-scale="72">
+    				<!-- 顶部显示区域 -->
+    				<div class = "topBox_background">
+                            <div class = "topBox"> 
+                                <div id ="returnPage" class="leftarrow"></div>
+                                <div id="tansferStatus" class = "text">
+                                    Transfer
+                                </div>
+                            </div>
+                     </div>
+                     <div class="InfoArea">
+                     		<div class="headImg img" style="background-image: url(../img/transfer/head2.jpg)"></div>
+                     		<div class="FriNm">Van Halen</div>
+                     		<div class="FriBankNo">6226-6678-3451-6785</div>
+	                     	<!-- 金额栏目 -->
+		    				<div class="msgArea">			
+		    					<div class="msgdetail">
+			    					<div class="msgTitle">Amount</div>
+			    					<input id= "msgAmount" class="msgAmount" placeholder="100 HKD" ></input>
+		    					</div>
+			    				<div class="msgTitle2">Message</div>
+			    				<input id = "msgContent" class="msgContent" placeholder="No more than 30 words" ></input>
+		    					
+		    					
+		    				</div>
+                     </div>
+                     
+                      <div id="page1" class="page1">
+	    				<div class="upperBox">
+	    					<div class="offerdetail">
+	    						<div class="bankGicon" style="background-image: url(../img/common/hsbc.png)"></div>
+	    						<div class="detail detailtitle">HSBC</div>
+		    					<div class="detail detailcontent">Bank Account</div>
+	    						<div class="detail detailbottom">886-98764-879</div>
+	    						<div class="circleIcon"></div>
+	    						<div class="circleIcon1"></div>
+	    					</div>  
+	    					<div class="offerdetail">
+	    						<div class="bankGicon" style="background-image: url(../img/common/boc.png)"></div>					
+		    						<div class="detail detailtitle">Bank Of China</div>
+		    						<div class="detail detailcontent">Bank Account</div>
+		    						<div class="detail detailbottom">5236-4978-7889-2314</div>
+	    						    <div class="circleIcon"></div>
+	    							<div class="circleIcon1"></div>
+	    					</div>
+	    					<div class="offerdetail">
+	    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
+		    						<div class="detailtitle">China Merchants Bank</div>
+		    						<div class="detail detailcontent">Bank Account</div>
+		    						<div class="detail detailbottom">6226-7896-3451-6785</div>
+	    							<div class="circleIcon"></div>
+	    							<div class="circleIcon1"></div>
+	    					</div>    
+	    					<div class="offerdetail">
+	    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
+		    						<div class="detailtitle">China Merchants Bank</div>
+		    						<div class="detail detailcontent">Bank Account</div>
+		    						<div class="detail detailbottom">6226-7896-3451-6785</div>
+	    							<div class="circleIcon"></div>
+	    							<div class="circleIcon1"></div>
+	    					</div>    		
+	    				</div>	    				
+	    				
+
+	    				
+	    				
+	    			</div>
+    				<button id="clearBt" class="bottomBt bt1" >Clear</button>
+	    			<button id="nextBt"  class="bottomBt bt2" data-toggle="popover" data-placement="top" 
+			data-content="顶部的 Popover 中的一些内容" >Next</button>
+    			
+    				
+    				</div>
+    				
+    			</div>
+    		</div>
+    </div>
+       
+
+
+</body>
+<script>
+
+$(document).ready(function () {
+	/* $('#page2').hide(); */
+	/* $('#page2').show(); */
+	$("#returnPage").bind('click',returnPage);
+	$("#clearBt").bind('click',clearFunc);
+	$('#nextBt').bind('click',jumptoCardSucess);
+});
+
+
+function returnPage() {
+	window.location.href='../home.html';
+};
+
+function clearFunc() {
+	$('#msgAmount').val("");
+	$('#msgContent').val("");
+};
+
+function jumptoCardSucess() {
+	var amt = $("#msgAmount").val();
+	if(typeof amt == "undefined" || amt == null || amt == ""){
+		
+    }else{
+    	window.location.href='./transToFriSucc.html';;
+    }
+	
+};
+
+	
+</script>
+</html>

@@ -1,0 +1,471 @@
+.page1{
+	display:block;
+}
+
+.leftarrow{
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	left: 33px;
+	top: 30px;
+	font-size: 35px;
+	color: rgba(229, 229, 229, 1);
+	background-image: url(../img/common/leftArrow.svg);
+	background-size: 100% 100%;
+	border:none
+}
+
+.InfoArea{
+	position: absolute;
+	width: 414px;
+	height: 176px;
+	top: 90px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.headImg{
+	position: absolute;
+	width: 29px;
+	height: 29px;
+	left: 28px;
+	top: 29px;
+	background-size: 100% 100%;
+	border-radius: 8px;
+}
+
+.headImg img{
+	width: 43px;
+	height: 29px;
+	left: -7px;
+	
+}
+
+.FriNm{
+	position: absolute;
+	width: 200px;
+	height: 22px;
+	left: 82px;
+	top: 18px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 16px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.FriBankNo{
+	position: absolute;
+	width: 250px;
+	height: 20px;
+	left: 140px;
+	top: 45px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 16px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+.midLine{
+	width: 1px;
+	height: 33px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(153, 153, 153, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+.line1{
+	position: absolute;
+	left: 159px;
+	top: 7px;
+}
+.line2{
+	position: absolute;
+	left: 306px;
+	top: 7px;
+}
+
+.upeerTitle{
+	width: 414px;
+	height: 32px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-bottom: #999999 solid 1px;
+}
+.title1{
+	position: absolute;	
+	top: 141px;
+}
+.title2{
+	position: absolute;	
+	top: 362px;
+}	
+.titleContent{
+	position: absolute;
+	width: 57px;
+	height: 28px;
+	left: 27px;
+	top: 4px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 17px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+.upArrow{
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 357px;
+	top: 8px;
+	font-size: 24px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/transfer/upArrow.svg);
+	background-size: 100% 100%;
+}
+
+.upperBox{
+	position: absolute;
+	width: 414px;
+	height: 268px;
+	top: 275px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+	overflow-y: auto; 
+	overflow-x:hidden;
+}
+/*  去除滚动条 */
+.upperBox::-webkit-scrollbar {
+    width: 0px;
+  }
+.offerdetail{
+    margin-left: 5%;
+    position: relative;
+    width: 95%;
+    height: 50.5%;
+    border-bottom:  #999999 solid 0.5px;
+    color: rgba(128, 128, 128, 1);
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 17px;
+    line-height: 150%;
+    text-align: left;
+    font-weight: bold;
+}
+.bankGicon{
+	position:absolute;
+	width: 68px;
+	height: 68px;
+	left: 5px;
+	top: 13px;
+	background-size: 100% 100%;
+}
+.detail{
+	color: rgba(0, 0, 0, 0.5438462409);
+	font-size: 17px;
+	line-height: 140%;
+	text-align: left;
+	height: 28px;
+	width: 260px;
+	text-overflow:ellipsis;/*设置隐藏部分为省略号*/
+	overflow: hidden;/*设置隐藏*/
+    display: -webkit-box;
+    -webkit-line-clamp: 1;/*设置显示行数，此处为2行，可设置其他数字*/
+    -webkit-box-orient: vertical;
+}
+.detailtitle{
+	position:absolute;
+	left: 87px;
+	top: 5px;
+
+}
+.detailcontent{
+	position:absolute;
+	left: 87px;
+	top: 33px;
+}
+.detailbottom{
+	position:absolute;
+	left: 87px;
+	top: 59px;
+}
+
+
+.msgArea{
+	position:absolute;
+	width: 414px;
+	height: 85px;
+	top: 85px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+.msgdetail{
+    margin-left: 28px;
+    position: relative;
+    width: 95%;
+    height: 50%;
+    border-bottom:  #999999 solid 0.5px;
+    color: rgba(128, 128, 128, 1);
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 17px;
+    line-height: 150%;
+    text-align: left;
+    font-weight: bold;
+}
+.msgTitle{
+	position:absolute;
+	width: 79px;
+    height: 28px;
+    left: 5px;
+    top: 20%;
+	color: rgba(128, 128, 128, 1);
+	font-size: 18px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.msgAmount{
+	position:absolute;
+	height: 20px;
+    left: 110px;
+    top: 30%;
+	width: 199px;
+	text-indent: 5px;
+	color: rgba(166, 166, 166, 1);
+	border:none;
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: left;
+	outline: none
+}
+.msgTitle2{
+	position:absolute;
+	width: 65px;
+    height: 28px;
+    left: 33px;
+    top: 60%;
+	color: rgba(128, 128, 128, 1);
+	font-size: 13px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+.msgContent{
+	position:absolute;
+	width: 85%;
+	height: 22px;
+	left: 107px;
+    top: 60%;
+	color: rgba(128, 128, 128, 1);
+	font-size: 13px;
+	border:none;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+	outline: none
+}
+
+.circleIcon{
+	position: absolute;
+	width: 23px;
+	height: 23px;
+	left: 90%;
+	top: 40%;
+	color: rgba(80, 80, 80, 1);
+	box-shadow: 0 0 3px #221f1f;
+	border-radius: 12px;
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.circleIcon1{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	left: 91.8%;
+    top: 45.3%;
+	color: rgba(80, 80, 80, 1);
+	/* background-color: rgba(49, 166, 145, 1); */
+	border-radius: 5px;
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.bottomBt{	
+	width: 117px;
+	height: 26px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 6px;
+	font-size: 14px;
+	line-height: 150%;
+	border: rgba(49, 166, 145, 1) solid 1px;
+	text-align: center;
+	font-weight: bold;
+}
+.bt1{
+	position:absolute;
+	left: 66px;
+	top: 564px;
+	outline: none;
+}
+.bt1:active{
+    background-color: #31a691;
+}
+.bt2{
+	position:absolute;
+	left: 229px;
+	top: 564px;
+	outline: none;
+}
+.bt2:active{
+    background-color: #31a691;
+}
+.queryArea{
+	position:absolute;
+	width: 414px;
+	height: 86px;
+	top: 143px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.queryIcon{
+	position:absolute;
+	width: 24px;
+	height: 24px;
+	left: 33px;
+	top: 25px;
+	font-size: 24px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/transfer/search.svg);
+	background-size: 100% 100%;
+}
+.queryMsg{
+	position:absolute;
+	width: 217px;
+	height: 30px;
+	left: 79px;
+	top: 22px;
+	text-indent: 5px;
+	color: rgba(166, 166, 166, 1);
+	border:none;
+	border-radius: 3px;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: left;
+	outline: none
+}
+.scanIcon{
+	position:absolute;
+	width: 31px;
+	height: 31px;
+	left: 338px;
+	top: 21px;
+	font-size: 31px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/transfer/scan.svg);
+	background-size: 100% 100%;
+}
+.sepLine{
+	position:absolute;
+	width: 352px;
+	height: 1px;
+	left: 33px;
+	top: 68px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(153, 153, 153, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+.infoArea{
+	position:absolute;
+	width: 414px;
+	height: 494px;
+	top: 242px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;	
+}
+.infoBox{
+	position:absolute;
+	top:48px;
+	width: 100%;
+	height: 412px;
+	overflow-y: auto; 
+	overflow-x:hidden;
+}
+.infoBox::-webkit-scrollbar {
+    width: 0px;
+  }
+ .infoDt{
+ 	border: None;
+ 	height: 15%;
+ }
+.infoTitle{
+	position:absolute;
+	width: 79px;
+	height: 28px;
+	left: 28px;
+	top: 15px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 18px;
+	line-height: 150%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.headicon{
+	position:absolute;
+	width: 32px;
+	height: 32px;
+	left: 22px;
+	top: 30%;
+	font-size: 32px;
+	color: rgba(153, 153, 153, 1);
+	background-image: url(../img/transfer/head.svg);
+	background-size: 100% 100%;
+}
+.headTitle{
+	position: absolute;
+    left: 80px;
+    top: 5px;
+    width: 150px;
+}
+.cardInfo{
+	position: absolute;
+    left: 80px;
+    width: 250px;
+    top: 50%;
+}
+.infoLine{
+	position:absolute;
+	width: 352px;
+	height: 1px;
+	left: 22px;
+	bottom: 1px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(153, 153, 153, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}

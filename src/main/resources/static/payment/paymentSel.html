@@ -11,7 +11,7 @@
     <link href="../css/animate.css"  rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
-    <link href="../css/transferInfo.css" rel="stylesheet">
+    <link href="../css/payment.css" rel="stylesheet">
     <!-- Mainly scripts -->
     <script src="../js/jquery-3.1.1.min.js"  type= "text/javascript"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
@@ -31,36 +31,30 @@
     				<div class = "topBox_background">
                             <div class = "topBox"> 
                                 <div id ="returnPage" class="leftarrow"></div>
-                                <div id="tansferStatus" class = "text">
-                                    Transfer
+                                <div class = "topTitle text">
+                                    Payment
                                 </div>
                             </div>
                      </div>
-                     <div class="InfoArea">
-                     		<div class="headImg img" style="background-image: url(../img/transfer/head2.jpg)"></div>
-                     		<div class="FriNm">Van Halen</div>
-                     		<div class="FriBankNo">6226-6678-3451-6785</div>
-	                     	<!-- 金额栏目 -->
-		    				<div class="msgArea">			
-		    					<div class="msgdetail">
-			    					<div class="msgTitle">Amount</div>
-			    					<input id= "msgAmount" class="msgAmount" placeholder="100 HKD" ></input>
-		    					</div>
-			    				<div class="msgTitle2">Message</div>
-			    				<input id = "msgContent" class="msgContent" placeholder="No more than 30 words" ></input>
-		    					
-		    					
-		    				</div>
-                     </div>
-                     
-                      <div id="page1" class="page1">
-	    				<div class="upperBox">
+    				
+    				<div  id="page2" class ="page2" >
+    					 <!-- From area -->
+	                    <div class="FstTitle">
+	                    	 <div class="fstTitleContent">ABC Shopping Mall</div>
+	                    	 <div class="payAmt">- 20.00 HKD</div>
+	                    </div>
+	               	
+	    			</div>
+	    			<div class="outBox">
+	    					<div class="uppTitle">My Bank Selection</div>
+	    				    <div class="upperBox">
 	    					<div class="offerdetail">
 	    						<div class= "cardTitle">My Default Bank Card</div>
 	    						<div class="bankGicon" style="background-image: url(../img/common/hsbc.png)"></div>
 	    						<div id = "bfrCard1" class="detail detailtitle">HSBC</div>
 		    					<div id = "cfrCard1" class="detail detailcontent">Bank Account</div>
 	    						<div id = "nfrCard1" class="detail detailbottom">886-98764-879</div>
+	    						<div id = "ofrCard1" class="detail detailoffer">Earn 2.4% Cash Dollar</div>
 	    						<div id = "ifrCard1"  class="circleIcon" ></div>
 	    						<div id = "frCard1" class="circleIcon1" onclick="setFromCard(this)"></div>
 	    					</div>  
@@ -70,6 +64,7 @@
 	    						<div id = "bfrCard2" class="detail detailtitle">Bank Of China</div>
 	    						<div id = "cfrCard2" class="detail detailcontent">Master Card</div>
 	    						<div id = "nfrCard2" class="detail detailbottom">5236-4978-7889-2314</div>
+	    						<div id = "ofrCard1" class="detail detailoffer">Get 45% off up to 20HKD</div>
     						    <div id = "ifrCard2"  class="circleIcon" ></div>
     							<div id = "frCard2" class="circleIcon1" onclick="setFromCard(this)"></div>
 	    					</div>
@@ -79,19 +74,26 @@
 	    						<div id = "bfrCard3" class="detail detailtitle">China Merchants Bank</div>
 	    						<div id = "cfrCard3" class="detail detailcontent">Master Card</div>
 	    						<div id = "nfrCard3" class="detail detailbottom">5236-4978-7889-2314</div>
+	    						<div id = "ofrCard1" class="detail detailoffer">Get 25% off up to 40HKD</div>
     						    <div id = "ifrCard3"  class="circleIcon" ></div>
     							<div id = "frCard3" class="circleIcon1" onclick="setFromCard(this)"></div>
-	    					</div>    	
-	    				</div>	    				
+	    					</div>
+	    					<div class="offerdetail">
+	    						<div class= "cardTitle">My Other Bank Card</div>
+	    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
+	    						<div id = "bfrCard3" class="detail detailtitle">China Merchants Bank</div>
+	    						<div id = "cfrCard3" class="detail detailcontent">Master Card</div>
+	    						<div id = "nfrCard3" class="detail detailbottom">5236-4978-7889-2314</div>
+	    						<div id = "ofrCard1" class="detail detailoffer">Get 25% off up to 40HKD</div>
+    						    <div id = "ifrCard3"  class="circleIcon" ></div>
+    							<div id = "frCard3" class="circleIcon1" onclick="setFromCard(this)"></div>
+	    					</div>  	
+	    				</div>	   
 	    				
-
 	    				
-	    				
-	    			</div>
-    				<button id="clearBt" class="bottomBt bt1" >Clear</button>
-	    			<button id="nextBt"  class="bottomBt bt2" data-toggle="popover" data-placement="top" 
-			data-content="顶部的 Popover 中的一些内容" >Next</button>
-    			
+	    				<button id="returnBt1" class="bottomBt bt2">Confirm Payment</button>
+    				</div>	    					
+    			</div>
     				
     				</div>
     				
@@ -105,12 +107,11 @@
 <script>
 
 $(document).ready(function () {
-	/* $('#page2').hide(); */
-	/* $('#page2').show(); */
 	$("#returnPage").bind('click',returnPage);
-	$("#clearBt").bind('click',clearFunc);
-	$('#nextBt').bind('click',jumptoCardSucess);
+	$("#returnBt1").bind('click',jumptoConfirmPage);
+	
 });
+
 var fromCard = new Array();
 
 /* 设置转出卡 */
@@ -131,24 +132,11 @@ function setFromCard(ele){
 }
 
 function returnPage() {
-	window.location.href='./transferHome.html';
+	window.location.href='../home.html';
 };
 
-function clearFunc() {
-	$('#msgAmount').val("");
-	$('#msgContent').val("");
+function jumptoConfirmPage() {
+	window.location.href='../home.html';
 };
-
-function jumptoCardSucess() {
-	var amt = $("#msgAmount").val();
-	if(typeof amt == "undefined" || amt == null || amt == ""){
-		
-    }else{
-    	window.location.href='./transToFriSucc.html';;
-    }
-	
-};
-
-	
 </script>
 </html>

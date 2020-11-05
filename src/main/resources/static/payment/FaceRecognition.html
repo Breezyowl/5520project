@@ -15,7 +15,7 @@
     
     <!-- Expenditure 页面 css style -->
     <link href="../css/common.css" rel="stylesheet">
-    <link href="../css/qrCode.css" rel="stylesheet">
+    <link href="../css/FaceRecognition.css" rel="stylesheet">
     
     <!-- Bootstrap 及 js 引用 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -49,8 +49,27 @@
     			<div id="pageContainer" class="pageContainer" data-scale="72">
                     <!-- vue -->
     				<div id="app">
-                        
-                        
+                        <div class="box">
+                            <el-row>
+                                <object data="../img/payment/图标 171 (1).svg" type="image/svg+xml" class = "back_icon"></object>
+                            </el-row>
+
+                            <el-row>
+                                <img src="../img/payment/Screen Shot 2020-11-05 at 2.27.19 PM.png" alt="" class="face_img"> 
+                            </el-row>
+
+                            <el-row class="text">
+                                Put your face within frame to scan
+                            </el-row>
+
+                            <el-row class="text1">
+                                or you can
+                            </el-row>
+
+                            <el-row class="pass_box">
+                                Enter Payment Password
+                            </el-row>
+                        </div>
                     
                     </div>
     			</div>

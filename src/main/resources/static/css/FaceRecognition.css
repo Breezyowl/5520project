@@ -1,0 +1,77 @@
+@font-face{
+    font-family: 'PingFang SC';
+	/* src : url('../fonts/PingFang-SC-Regular.ttf'); */
+    src : url('../fonts/PingFang-SC-Regular.ttf');
+	
+}
+
+.box{
+    width: 413px;
+	height: 736px;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+	font-size: 14px;
+	line-height: 150%;
+	text-align: center;
+}
+
+.back_icon{
+    width: 35px;
+	height: 35px;
+	left: 33px;
+	top: 29px;
+	font-size: 35px;
+    color: rgba(128, 128, 128, 1);
+    position: absolute;
+}
+
+.face_img{
+    width: 232px;
+	height: 232px;
+	left: 91px;
+    top: 148px;
+    position: absolute;
+}
+
+.text{
+    width: 315px;
+	height: 28px;
+	left: 50px;
+	top: 442px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+    font-weight: bold;
+	font-family: 'PingFang SC';
+    position: relative;
+}
+
+.text1{
+    width: 96px;
+	height: 28px;
+	left: 159px;
+	top: 507px;
+	color: rgba(128, 128, 128, 1);
+	font-size: 18px;
+	line-height: 150%;
+	text-align: left;
+    font-weight: bold;
+	font-family: 'PingFang SC';
+    position: relative;
+}
+
+.pass_box{
+    width: 258px;
+	height: 39px;
+	left: 77px;
+	top: 546px;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(49, 166, 145, 1);
+	border-radius: 9px;
+	font-size: 19px;
+	line-height: 200%;
+	text-align: center;
+    font-weight: bold;
+    position: relative;
+}

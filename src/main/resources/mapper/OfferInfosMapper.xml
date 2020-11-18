@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.captainxero.project.dao.OfferInfosMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.captainxero.project.entity.OfferInfos">
+        <id column="Offer_ID" property="offerId" />
+        <result column="Offer_Nm" property="offerNm" />
+        <result column="Card_No" property="cardNo" />
+        <result column="Open_Ind" property="openInd" />
+        <result column="Offer_Logo_Add" property="offerLogoAdd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Offer_ID, Offer_Nm, Card_No, Open_Ind, Offer_Logo_Add
+    </sql>
+
+</mapper>

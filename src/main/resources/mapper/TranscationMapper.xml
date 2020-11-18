@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.captainxero.project.dao.TranscationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.captainxero.project.entity.Transcation">
+        <id column="Card_No" property="cardNo" />
+        <result column="Cust_ID" property="custId" />
+        <result column="Trx_Id" property="trxId" />
+        <result column="Trx_Time" property="trxTime" />
+        <result column="Trx_Amt" property="trxAmt" />
+        <result column="Trx_Type" property="trxType" />
+        <result column="Consume_Type" property="consumeType" />
+        <result column="Mch_Nm" property="mchNm" />
+        <result column="Consume_Logo_Add" property="consumeLogoAdd" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        Cust_ID, Card_No, Trx_Id, Trx_Time, Trx_Amt, Trx_Type, Consume_Type, Mch_Nm, Consume_Logo_Add
+    </sql>
+
+</mapper>

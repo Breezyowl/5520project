@@ -25,10 +25,10 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 public class MysqlGenerator {
     private static String packageName="src/main";                //初始文件路径
-    private static String customPath="project.system.user";      //自定义路径
-    private static String authorName="Captainxero";              //作者
-    private static String table="sys_user";                      //table名字
-    private static String prefix="sys_";                         //table前缀
+    private static String customPath="";      //自定义路径
+    private static String authorName="Dylan";              //作者
+    private static String table="offer_infos";                      //table名字
+    private static String prefix="";                         //table前缀
     private static File file = new File(packageName);
     private static String path = file.getAbsolutePath();
 
@@ -71,9 +71,9 @@ public class MysqlGenerator {
                             }
                         })
                         .setDriverName("com.mysql.jdbc.Driver")
-                        .setUsername("root")
-                        .setPassword("1qaz2wsx")
-                        .setUrl("jdbc:mysql://localhost:3306/mybatis_plus?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull")
+                        .setUsername("admin")
+                        .setPassword("cuhk1001")
+                        .setUrl("jdbc:mysql://db-cuhk-afi.c18nldkzqsg2.us-east-1.rds.amazonaws.com:3306/project?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull")
         ).setStrategy(
                 // 策略配置
                 new StrategyConfig()
@@ -113,7 +113,7 @@ public class MysqlGenerator {
                 // 包配置
                 new PackageConfig()
                         //.setModuleName("User")
-                        .setParent("com.captainxero." + customPath)// 自定义包路径
+                        .setParent("com.captainxero.project" + customPath)// 自定义包路径
                         .setController("controller")// 这里是控制器包名，默认 web
                         .setEntity("entity")
                         .setMapper("dao")

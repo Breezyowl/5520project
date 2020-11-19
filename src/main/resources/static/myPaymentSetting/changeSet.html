@@ -27,6 +27,9 @@
     <!-- element UI 引入 -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <!-- 引入api -->
+    <!-- <script scr="../js/common.js"></script> -->
     
 </head>
 
@@ -60,26 +63,26 @@
                                     <div class="change_title">Change My Settings</div>
                                 </el-col>
                                 <!-- data loop -->
-                                <div v-for="item in changeSetData" :key="item.name">
+                                <div v-for="item in changeSetData" :key="item.offerNm">
                                     <div class="singleItem">
                                         <hr class="cross_line">
                                         <el-col :span="4">
-                                            <object :data=item.logo type="image/svg+xml" class="change_logo"></object>
+                                            <object :data=item.offerLogoAdd type="image/svg+xml" class="change_logo"></object>
                                         </el-col>
                                         <el-col :span="8">
                                             <el-row class="change_name">
-                                                {{item.name}}
+                                                {{item.offerNm}}
                                             </el-row>
                                             <el-row class="change_offer">
-                                                {{item.offer}}
+                                                {{item.content}}
                                             </el-row>
                                         </el-col>
                                         <el-col :span="4" class="change_card">
-                                            {{item.card}}
+                                            {{item.cardNo}}
                                         </el-col>
                                         <el-col :span="4" >
                                             <el-switch
-                                                v-model="item.if_accept"
+                                                v-model="item.openInd"
                                                 :active-value="1"
                                                 :inactive-value="2"
                                                 active-color="rgba(49, 166, 145, 1)"
@@ -102,8 +105,10 @@
 </body>
 
 
+<script type="module">
+    
+    import {getofferList} from "../js/common.js"
 
-<script type="text/javascript">
     var app = new Vue({
         el: '#app',
 
@@ -112,14 +117,14 @@
 
                 // 获取 payment settings 数据
                 changeSetData:[
-                    {name:"Food", offer:"2.4% cash dollar rebate", card:"Card A", logo:"../img/MyPaymentSettings/图标 44.svg", if_accept:1},
-                    {name:"Music", offer:"$1 cash dollar to get a ticket", card:"Card A", logo:"../img/MyPaymentSettings/图标 45.svg", if_accept:1},
-                    {name:"Supermarket", offer:"1% cash dollar rebate", card:"Card C", logo:"../img/MyPaymentSettings/图标 46.svg", if_accept:1},
-                    {name:"Car", offer:"", card:"Card D", logo:"../img/MyPaymentSettings/图标 48.svg", if_accept:2},
-                    {name:"Book", offer:"", card:"Card B", logo:"../img/MyPaymentSettings/图标 49.svg", if_accept:2},
-                    {name:"Online", offer:"", card:"Card D", logo:"../img/MyPaymentSettings/图标 50.svg", if_accept:2},
-                    {name:"Airport", offer:"", card:"Card C", logo:"../img/MyPaymentSettings/图标 51.svg", if_accept:2},
-                    {name:"Others", offer:"", card:"Card A", logo:"../img/MyPaymentSettings/图标 47.svg",if_accept:1},
+                    // {name:"Food", offer:"2.4% cash dollar rebate", card:"Card A", logo:"../img/MyPaymentSettings/图标 44.svg", if_accept:1},
+                    // {name:"Music", offer:"$1 cash dollar to get a ticket", card:"Card A", logo:"../img/MyPaymentSettings/图标 45.svg", if_accept:1},
+                    // {name:"Supermarket", offer:"1% cash dollar rebate", card:"Card C", logo:"../img/MyPaymentSettings/图标 46.svg", if_accept:1},
+                    // {name:"Car", offer:"", card:"Card D", logo:"../img/MyPaymentSettings/图标 48.svg", if_accept:2},
+                    // {name:"Book", offer:"", card:"Card B", logo:"../img/MyPaymentSettings/图标 49.svg", if_accept:2},
+                    // {name:"Online", offer:"", card:"Card D", logo:"../img/MyPaymentSettings/图标 50.svg", if_accept:2},
+                    // {name:"Airport", offer:"", card:"Card C", logo:"../img/MyPaymentSettings/图标 51.svg", if_accept:2},
+                    // {name:"Others", offer:"", card:"Card A", logo:"../img/MyPaymentSettings/图标 47.svg",if_accept:1},
                 ],
             }
         },
@@ -127,12 +132,18 @@
 
         created:
             function(){
+                this.offerList()
             },
 
         methods:{
             // 这个function可以删除
             setEnable(name, isShow){
                 console.log(this.paymentSetData)
+            },
+
+            offerList(){
+                var res = getofferList()
+                this.changeSetData = res
             }
         }
     })
@@ -145,4 +156,5 @@
 
 
  </script>
+
 </html>

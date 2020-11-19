@@ -17,10 +17,11 @@ function generateStr( len ){
 	return str;
 }
 
-function getofferList(){
+export function getofferList(){
 	var offerId = 1;
 	var offerNm = "FOOD";
-	var openInd = 1;
+    var openInd = 1;
+    var global;
 	$.ajax({
         async : false,
         type : "get",
@@ -28,19 +29,20 @@ function getofferList(){
         contentType: "application/json",
         //这里设置查询条件,如果不设置查询条件，就返回全量列表
         data:{
-        	  offerId: offerId,
-        	  offerNm: offerNm，
-        	  openInd：openInd
+        	//   offerId: offerId,
+        	//   offerNm: offerNm,
+        	//   openInd: openInd
         	 },
         success: function (res) {
             console.log(res.toString());
+            global=res;
             return res;
         },
         error:function (res) {
             alert(res);
         }
     });
-	
+    return global;	
 }
 
 function updateOfferList(arr){
@@ -82,3 +84,9 @@ function updateOfferList(arr){
         }
     });
 }
+
+// export function getOffer() {
+//     var res = getofferList()
+//     console.log(res)
+//     return res
+// }

@@ -10,12 +10,12 @@
         <result column="Open_Ind" property="openInd" />
         <result column="Offer_Logo_Add" property="offerLogoAdd" />
         <result column="content" property="content" />
-        <result column="tailNumber" property="tailNumber" />
+        <result column="Tail_Number" property="tailNumber" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        Offer_ID, Offer_Nm, Card_No, Open_Ind, Offer_Logo_Add, content, tailNumber
+        Offer_ID, Offer_Nm, Card_No, Open_Ind, Offer_Logo_Add, content, Tail_Number
     </sql>
 
 </mapper>

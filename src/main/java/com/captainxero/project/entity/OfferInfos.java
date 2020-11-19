@@ -48,6 +48,7 @@ public class OfferInfos extends Model<OfferInfos> {
      * 内容
      */
     private String content;
+    @TableField("Tail_Number")
     private String tailNumber;
 
 

@@ -43,7 +43,8 @@ public class CardInfosController {
     @ApiOperation(value="获取用户卡列表", notes="支付卡片")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "custId", value = "用户id", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "cardNo", value = "卡号", required = false, dataType = "String")
+            @ApiImplicitParam(name = "cardNo", value = "卡号", required = false, dataType = "String"),
+            @ApiImplicitParam(name = "cardTyp", value = "卡类型", required = false, dataType = "String")
     })
     @RequestMapping(value="/selCardList", method=RequestMethod.GET)
     @ResponseBody
@@ -52,6 +53,7 @@ public class CardInfosController {
     	Map<String,Object> columnMap = new HashMap<>();
     	columnMap.put("Cust_ID", cardInfos.getCustId());
     	columnMap.put("Card_No", cardInfos.getCardNo());
+    	columnMap.put("Card_Typ", cardInfos.getCardTyp());
     	List<CardInfos> cardList =  cardInfosService.selectByMap(columnMap);
 		return new ResponseEntity<List<CardInfos>>(cardList,HttpStatus.OK);
     	

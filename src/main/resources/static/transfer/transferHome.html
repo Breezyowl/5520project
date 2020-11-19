@@ -50,64 +50,14 @@
 	                    	 <div class="titleContent">From</div>
 	                    	 <div class="upArrow"></div>
 	                    </div>
-	    				<div class="upperBox">
-	    					<div class="offerdetail">
-	    						<div class="bankGicon" style="background-image: url(../img/common/hsbc.png)"></div>
-	    						<div id = "bfrCard1" class="detail detailtitle">HSBC</div>
-		    					<div id = "cfrCard1" class="detail detailcontent">Bank Account</div>
-	    						<div id = "nfrCard1" class="detail detailbottom">886-98764-879</div>
-	    						<div id = "ifrCard1"  class="circleIcon" ></div>
-	    						<div id = "frCard1" class="circleIcon1" onclick="setFromCard(this)"></div>
-	    					</div>  
-	    					<div class="offerdetail">
-	    						<div class="bankGicon" style="background-image: url(../img/common/boc.png)"></div>					
-		    						<div id = "bfrCard2" class="detail detailtitle">Bank Of China</div>
-		    						<div id = "cfrCard2" class="detail detailcontent">Master Card</div>
-		    						<div id = "nfrCard2" class="detail detailbottom">5236-4978-7889-2314</div>
-	    						    <div id = "ifrCard2"  class="circleIcon" ></div>
-	    							<div id = "frCard2" class="circleIcon1" onclick="setFromCard(this)"></div>
-	    					</div>
-	    					<div class="offerdetail">
-	    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-		    						<div id = "bfrCard3" class="detail detailtitle">China Merchants Bank</div>
-		    						<div id = "cfrCard3" class="detail detailcontent">Master Card</div>
-		    						<div id = "nfrCard3" class="detail detailbottom">5236-4978-7889-2314</div>
-	    						    <div id = "ifrCard3"  class="circleIcon" ></div>
-	    							<div id = "frCard3" class="circleIcon1" onclick="setFromCard(this)"></div>
-	    					</div>        		
-	    				</div>
+	    				<div id = "upperBoxArea" class="upperBox"></div>
 	    				
 	    				 <!-- To area -->
 	                    <div class="upeerTitle title2">
 	                    	 <div class="titleContent">To</div>
 	                    	 <div class="upArrow"></div>
 	                    </div>
-	    				<div class="downBox">
-	    					<div class="offerdetail">
-	    						<div class="bankGicon" style="background-image: url(../img/common/hsbc.png)"></div>
-	    						<div id = "btrCard1" class="detail detailtitle">HSBC</div>
-		    					<div id = "ctrCard1" class="detail detailcontent">Bank Account</div>
-	    						<div id = "ntrCard1" class="detail detailbottom">886-98764-879</div>
-	    						<div id = "itrCard1"  class="circleIcon" ></div>
-	    						<div id = "ftCard1" class="circleIcon1" onclick="setToCard(this)"></div>
-	    					</div>  
-	    					<div class="offerdetail">
-	    						<div class="bankGicon" style="background-image: url(../img/common/boc.png)"></div>					
-		    						<div id = "btrCard2" class="detail detailtitle">Bank Of China</div>
-		    						<div id = "ctrCard2" class="detail detailcontent">Master Card</div>
-		    						<div id = "ntrCard2" class="detail detailbottom">5236-4978-7889-2314</div>
-	    						    <div id = "itrCard2"  class="circleIcon" ></div>
-	    							<div id = "ftCard2" class="circleIcon1" onclick="setToCard(this)"></div>
-	    					</div>
-	    					<div class="offerdetail">
-	    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-		    						<div id = "btrCard3" class="detail detailtitle">China Merchants Bank</div>
-		    						<div id = "ctrCard3" class="detail detailcontent">Master Card</div>
-		    						<div id = "ntrCard3" class="detail detailbottom">5236-4978-7889-2314</div>
-	    						    <div id = "itrCard3"  class="circleIcon" ></div>
-	    							<div id = "ftCard3" class="circleIcon1" onclick="setToCard(this)"></div>
-	    					</div> 	
-	    				</div>
+	    				<div id = "downBoxArea" class="downBox"></div>
 	    				<!-- 底部金额栏目 -->
 	    				<div class="msgArea">			
 	    					<div class="msgdetail">
@@ -168,16 +118,16 @@
 <script>
 
 $(document).ready(function () {
-	/* $('#page2').hide(); */
-	/* $('#page2').show(); */
 	$("#returnPage").bind('click',returnPage);
 	$("#sub1").bind('click',switchtoPage1);
 	$("#sub2").bind('click',switchtoPage2);
 	$("#sub3").bind('click',switchtoPage3);
 	$("#clearBt").bind('click',clearFunc);
-	
+	$('#msgAmount').val("");
 	$("#scan").bind('click',jumptoScan);
 	$('#nextBt').bind('click',jumptoCardSucess);
+	getFromCardList();
+	getToCardList();
 });
 
 var fromCard = new Array();
@@ -215,7 +165,62 @@ function setToCard(ele){
 	toCard[2] = $('#c'+ id).text();
 	toCard[3] = $('#n'+ id).text();
 }
-
+function getFromCardList(){
+	var cardHtmlone = "<div class=\"offerdetail\"><div class=\"bankGicon\" style=\"background-image: url("; 
+	var pageHtml = ""
+	$.ajax({
+        async : false,
+        type : "get",
+        url : "/cardInfos/selCardList",
+        contentType: "application/json",
+        //这里设置查询条件,如果不设置查询条件，就返回全量列表
+        data:{
+        	cardTyp:"Debit"
+        },
+        success: function (res) {         
+            for(j = 0,len = res.length; j < len; j++) {
+            	pageHtml += cardHtmlone + res[j]["bankLogoAdd"] + ")\"></div> <div id = \"bfrCard" + j +"\" class=\"detail detailtitle\">" 
+            	+ res[j]["bankCardTyp"] + "</div><div id = \"cfrCard" + j +"\" class=\"detail detailcontent\">" +  res[j]["cardTyp"] 
+            	+ "</div><div id = \"nfrCard" + j +"\"  class=\"detail detailbottom\">" + res[j]["cardNo"] 
+            	+ "</div><div id = \"ifrCard" + j +"\" class=\"circleIcon\" ></div>"
+            	+ "<div id = \"frCard" + j +"\" class=\"circleIcon1\" onclick=\"setFromCard(this)\"></div></div>"
+            } 
+            console.log(pageHtml);
+            $("#upperBoxArea").html(pageHtml)
+        },
+        error:function (res) {
+            alert(res);
+        }
+    });
+}
+function getToCardList(){
+	var cardHtmlone = "<div class=\"offerdetail\"><div class=\"bankGicon\" style=\"background-image: url("; 
+	var pageHtml = ""
+	$.ajax({
+        async : false,
+        type : "get",
+        url : "/cardInfos/selCardList",
+        contentType: "application/json",
+        //这里设置查询条件,如果不设置查询条件，就返回全量列表
+        data:{
+        	cardTyp:"Debit"
+        },
+        success: function (res) {         
+            for(j = 0,len = res.length; j < len; j++) {
+            	pageHtml += cardHtmlone + res[j]["bankLogoAdd"] + ")\"></div> <div id = \"btrCard" + j +"\" class=\"detail detailtitle\">" 
+            	+ res[j]["bankCardTyp"] + "</div><div id = \"ctrCard" + j +"\" class=\"detail detailcontent\">" +  res[j]["cardTyp"] 
+            	+ "</div><div id = \"ntrCard" + j +"\"  class=\"detail detailbottom\">" + res[j]["cardNo"] 
+            	+ "</div><div id = \"itrCard" + j +"\" class=\"circleIcon\" ></div>"
+            	+ "<div id = \"trCard" + j +"\" class=\"circleIcon1\" onclick=\"setToCard(this)\"></div></div>"
+            } 
+            console.log(pageHtml);
+            $("#downBoxArea").html(pageHtml)
+        },
+        error:function (res) {
+            alert(res);
+        }
+    });
+}
 function returnPage() {
 	window.location.href='../home.html';
 };
@@ -245,7 +250,8 @@ function jumptoCardSucess() {
 	if(typeof amt == "undefined" || amt == null || amt == ""){
 		
     }else{
-    	window.location.href='./transferSucc.html';;
+    	var url = './transferSucc.html?from='+fromCard[3]+"&to="+toCard[3]+"&amt=" + amt;
+    	window.location.href= url;
     }
 	
 };

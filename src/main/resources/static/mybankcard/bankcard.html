@@ -38,71 +38,7 @@
                      </div>
                      <div class="bankTitle">Account</div>
                      <!-- 银行卡 -->
-    				<div class="offerBox">
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/hsbc.png)"></div>
-    						<div class="detail detailtitle">HSBC</div>
-	    					<div class="detail detailcontent">Bank Account</div>
-    						<div class="detail detailbottom">886-98764-879</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>  
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/boc.png)"></div>					
-	    						<div class="detail detailtitle">Bank Of China</div>
-	    						<div class="detail detailcontent">Master Card</div>
-	    						<div class="detail detailbottom">5236-4978-7889-2314</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>    
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>    
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>    
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>  
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div> 
-    					<div class="offerdetail">
-    						<div class="bankGicon" style="background-image: url(../img/common/cmb.jpg)"></div>					
-	    						<div class="detailtitle">China Merchants Bank</div>
-	    						<div class="detail detailcontent">Visa Card</div>
-	    						<div class="detail detailbottom">6226-7896-3451-6785</div>
-    						<div class="rightarrow arrowdetail"></div>
-    					</div>  				
-    				</div>
+    				<div id ="offerBoxArea" class="offerBox"></div>
     				
     				<!-- 底部按钮区域 -->
     				<div id ="bottomArea" class="bottomArea">
@@ -113,8 +49,6 @@
     				
     			</div>
     		</div>
-    	</div>
-       
     </div>
 
 
@@ -123,8 +57,33 @@
 $(document).ready(function () {
 	$("#returnPage").bind('click',returnPage);
 	$("#bottomArea").bind('click',jumptoScan);
+	getCardList();
 });
-
+function getCardList(){
+	var cardHtmlone = "<div class=\"offerdetail\"><div class=\"bankGicon\" style=\"background-image: url("; 
+	var pageHtml = ""
+	$.ajax({
+        async : false,
+        type : "get",
+        url : "/cardInfos/selCardList",
+        contentType: "application/json",
+        //这里设置查询条件,如果不设置查询条件，就返回全量列表
+        data:{},
+        success: function (res) {         
+            for(j = 0,len = res.length; j < len; j++) {
+            	pageHtml += cardHtmlone + res[j]["bankLogoAdd"] + ")\"></div>" + "<div class=\"detail detailtitle\">" 
+            	+ res[j]["bankCardTyp"] + "</div><div class=\"detail detailcontent\">" +  res[j]["cardTyp"] 
+            	+ "</div><div class=\"detail detailbottom\">" + res[j]["cardNo"] 
+            	+ "</div><div class=\"rightarrow arrowdetail\"></div></div>"
+            }
+            console.log(pageHtml);
+            $("#offerBoxArea").html(pageHtml)
+        },
+        error:function (res) {
+            alert(res);
+        }
+    });
+}
 
 function returnPage() {
 	window.location.href='../home.html';

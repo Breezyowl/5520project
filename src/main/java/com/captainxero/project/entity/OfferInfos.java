@@ -12,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Dylan
- * @since 2020-11-18
+ * @since 2020-11-19
  */
 @TableName("offer_infos")
 public class OfferInfos extends Model<OfferInfos> {
@@ -44,6 +44,11 @@ public class OfferInfos extends Model<OfferInfos> {
      */
     @TableField("Offer_Logo_Add")
     private String offerLogoAdd;
+    /**
+     * 内容
+     */
+    private String content;
+    private String tailNumber;
 
 
     public String getOfferId() {
@@ -86,6 +91,22 @@ public class OfferInfos extends Model<OfferInfos> {
         this.offerLogoAdd = offerLogoAdd;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getTailNumber() {
+        return tailNumber;
+    }
+
+    public void setTailNumber(String tailNumber) {
+        this.tailNumber = tailNumber;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.offerId;
@@ -99,6 +120,8 @@ public class OfferInfos extends Model<OfferInfos> {
         ", cardNo=" + cardNo +
         ", openInd=" + openInd +
         ", offerLogoAdd=" + offerLogoAdd +
+        ", content=" + content +
+        ", tailNumber=" + tailNumber +
         "}";
     }
 }

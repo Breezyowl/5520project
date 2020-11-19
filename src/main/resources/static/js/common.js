@@ -18,9 +18,9 @@ function generateStr( len ){
 }
 
 function getofferList(){
-	var offerId = 1;
-	var offerNm = "FOOD";
-	var openInd = 1;
+	var offerId = "";
+	var offerNm = "";
+	var openInd = "";
 	$.ajax({
         async : false,
         type : "get",
@@ -28,12 +28,12 @@ function getofferList(){
         contentType: "application/json",
         //这里设置查询条件,如果不设置查询条件，就返回全量列表
         data:{
-        	  offerId: offerId,
-        	  offerNm: offerNm，
-        	  openInd：openInd
+//        	  offerId: offerId,
+//        	  offerNm: offerNm,
+//        	  openInd: openInd
         	 },
         success: function (res) {
-            console.log(res.toString());
+            console.log(res[0]["offerId"]);
             return res;
         },
         error:function (res) {

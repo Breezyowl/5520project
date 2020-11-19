@@ -17,11 +17,10 @@ function generateStr( len ){
 	return str;
 }
 
-export function getofferList(){
-	var offerId = 1;
-	var offerNm = "FOOD";
-    var openInd = 1;
-    var global;
+function getofferList(){
+	var offerId = "";
+	var offerNm = "";
+	var openInd = "";
 	$.ajax({
         async : false,
         type : "get",

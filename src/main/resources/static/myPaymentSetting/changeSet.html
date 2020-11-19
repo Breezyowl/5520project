@@ -49,7 +49,7 @@
                                 <div>
                                     <object data="../img/MyBalance/图标 171.svg" type="image/svg+xml" class = "icon"></object>
                                 </div>
-                                <div class = "text" id="jump_to_paySet">
+                                <div class = "text" id="jump_to_paySet" @click="update">
                                     My Payment Settings
                                 </div>
                             </div>
@@ -84,9 +84,9 @@
                                             <el-switch
                                                 v-model="item.openInd"
                                                 :active-value="1"
-                                                :inactive-value="2"
+                                                :inactive-value="0"
                                                 active-color="rgba(49, 166, 145, 1)"
-                                                @change="setEnable(item.name, item.if_accept)"
+                                                
                                                 class="change_switch">
                                             </el-switch>
                                         </el-col>
@@ -107,7 +107,7 @@
 
 <script type="module">
     
-    import {getofferList} from "../js/common.js"
+    import {getofferList, updateOfferList} from "../js/common.js"
 
     var app = new Vue({
         el: '#app',
@@ -132,7 +132,7 @@
 
         created:
             function(){
-                this.offerList()
+                this.initialize()
             },
 
         methods:{
@@ -141,10 +141,18 @@
                 console.log(this.paymentSetData)
             },
 
-            offerList(){
+            // 初始化页面
+            initialize(){
                 var res = getofferList()
                 this.changeSetData = res
+            },
+
+            // 更新页面
+            update(){
+                console.log(this.changeSetData)
+                updateOfferList(this.changeSetData)
             }
+
         }
     })
 

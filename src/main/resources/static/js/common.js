@@ -45,7 +45,7 @@ export function getofferList(){
     return global;	
 }
 
-function updateOfferList(arr){
+export function updateOfferList(arr){
 //	var arr = new Array();
 //	var offer1 = {
 //			offerId: "1",
@@ -63,7 +63,7 @@ function updateOfferList(arr){
 //	};
 //	arr.push(offer1);
 //	arr.push(offer2);
-	sendData = JSON.stringify(arr);
+	var sendData = JSON.stringify(arr);
 	$.ajax({
         async : false,
         type : "post",
@@ -73,7 +73,7 @@ function updateOfferList(arr){
         success: function (res) {
             console.log(res.toString());
             if(res.toString()=="SUCCESS"){
-            	window.location.href='./home.html';
+            	window.location.href='./changeSet.html';
             }else{
                 alert("用户名或密码错误");
             }

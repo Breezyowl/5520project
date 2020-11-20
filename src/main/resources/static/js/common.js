@@ -38,6 +38,30 @@ export function getCardList(){
     });
     return cards;
 }
+
+export function getofferCards(offerNm){
+    var global;
+	$.ajax({
+        async : false,
+        type : "get",
+        url : "/offerInfosList/selList",
+        contentType: "application/json",
+        //这里设置查询条件,如果不设置查询条件，就返回全量列表
+        data:{
+        	//   offerId: offerId,
+        	   offerNm: offerNm
+        	 },
+        success: function (res) {
+            console.log(res.toString());
+            global=res;
+            return res;
+        },
+        error:function (res) {
+            alert(res);
+        }
+    });
+    return global;	
+}
 export function getofferList(){
 	var offerId = "";
 	var offerNm = "";

@@ -83,22 +83,22 @@
     					<div class="infoArea">  		
     					   <div class="infoTitle">Recently</div>
     					   <div class="infoBox">			   
-	    					   <div class="offerdetail infoDt">
+	    					   <div id = "frd1" class="offerdetail infoDt" onclick="jumpToInfo(this)">
 		    						<div class="headicon"></div>					
-			    						<div class="headTitle">Matthew Chen</div>
-			    						<div class="detail cardInfo">6226-7896-3451-6785</div>
+			    						<div id = "mfrd1" class="headTitle">Matthew Chen</div>
+			    						<div id = "nfrd1" class="detail cardInfo">6226-7896-3451-6785</div>
 			    						<div class="infoLine"></div>		    						
 		    					</div> 
-		    					<div class="offerdetail infoDt">
+		    					<div id = "frd2"  class="offerdetail infoDt" onclick="jumpToInfo(this)">
 		    						<div class="headicon"></div>					
-			    						<div class="headTitle">Bob Dylan</div>
-			    						<div class="detail cardInfo">6226-7896-6890-6785</div>
+			    						<div id = "mfrd2" class="headTitle">Bob Dylan</div>
+			    						<div id = "nfrd2" class="detail cardInfo">6226-7896-6890-6785</div>
 		    							<div class="infoLine"></div>
 		    					</div> 
-		    					<div class="offerdetail infoDt">
+		    					<div id = "frd3" class="offerdetail infoDt" onclick="jumpToInfo(this)">
 		    						<div class="headicon"></div>					
-			    						<div class="headTitle">Van Halen</div>
-			    						<div class="detail cardInfo">6226-6678-3451-6785</div>	
+			    						<div id = "mfrd3" class="headTitle">Van Halen</div>
+			    						<div id = "nfrd3" class="detail cardInfo">6226-6678-3451-6785</div>	
 			    						<div class="infoLine"></div>	    						
 		    					</div> 
 
@@ -118,6 +118,7 @@
 <script>
 
 $(document).ready(function () {
+	$('#appContainer').fadeIn(1000);
 	$("#returnPage").bind('click',returnPage);
 	$("#sub1").bind('click',switchtoPage1);
 	$("#sub2").bind('click',switchtoPage2);
@@ -132,7 +133,6 @@ $(document).ready(function () {
 
 var fromCard = new Array();
 var toCard = new Array();
-
 /* 设置转出卡 */
 function setFromCard(ele){
 	var id = $(ele).attr("id");
@@ -225,7 +225,7 @@ function returnPage() {
 	window.location.href='../home.html';
 };
 function switchtoPage1() {
-	$('#page2').hide();
+	$('#page2').hide(500);
 	$("#sub1").css("color","#31a691")
 	$("#sub2").css("color","#a6a6a6")
 	$('#page1').show();		
@@ -233,7 +233,7 @@ function switchtoPage1() {
 function switchtoPage2() {
 	$("#sub2").css("color","#31a691")
 	$('#sub1').css("color","#a6a6a6")
-	$('#page1').hide();
+	$('#page1').hide(500);
 	$('#page2').show();	
 };
 function switchtoPage3() {
@@ -244,6 +244,20 @@ function clearFunc() {
 	$('#msgAmount').val("");
 	$('#msgContent').val("");
 };
+
+function jumpToInfo(ele){
+	var id = $(ele).attr("id");
+
+	$('#i'+id).css('box-shadow', '0 0 3px #31a691');
+	$(ele).css('background-color', '#31a691');
+	fromCard[0] = id;
+	var frdNm = $('#m'+ id).text();
+	var frdCard = $('#n'+ id).text();
+	
+	var url = './transToFriInfo.html?frdNm='+frdNm+"&frdCard="+frdCard;
+	window.location.href= url;
+}
+
 
 function jumptoCardSucess() {
 	var amt = $("#msgAmount").val();

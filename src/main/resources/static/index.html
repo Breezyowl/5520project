@@ -27,7 +27,12 @@
     		</div>
     		<div id="appContainer" class="mobile-wrapper">
     			<div id="pageContainer" class="pageContainer" data-scale="72">
-    				<div id="page1" data-islandscape="false" class="page current" data-key="1" data-direction="y" >
+    				<div id ="pLoad" class="page pLoad">
+    					<div class="ffImg"></div>
+    					<div  class="middleTxt">Fast Fusion Pay</div>
+    					<div  class="bottomTxt">©️2020-2030 Fast Fusion Pay. All rights reserved</div>
+    				</div>
+    				<div id="page1" data-islandscape="false" class="page current page1" data-key="1" data-direction="y" >
     					<div id="image_3X1" class="imageC cDiv image_3X1" data-state="-1" data-select=".image_3X1">
 	    					<div class="cutImgOutBox"><img class="cImg" src="./img/img142030174d9209bb8.png"></div>
     					</div>
@@ -75,7 +80,7 @@
 
 </body>
 <script>
-$(document).ready(function () {
+$(document).ready(function () {	
 	var mockname = "Catherine";
 	$("#mockname").text(mockname);
 	$("#logbtn").bind('click',logincheck);
@@ -85,7 +90,10 @@ $(document).ready(function () {
 			logincheck()
 		}
 	});
-	
+	$("#pLoad").fadeOut(4500);
+	var setTime = setTimeout(function () {
+	 $('#page1').fadeIn(1000);
+	}, 3500);
 });
 
 //登录

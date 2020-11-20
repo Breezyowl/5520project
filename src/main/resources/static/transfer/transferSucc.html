@@ -98,7 +98,7 @@ function returnPage() {
 };
 
 function initData(){
-	var amt = "-"+ getUrlParam("amt")+" HKD";
+	var amt = "- "+ parseFloat(getUrlParam("amt")).toFixed(2) +" HKD";
 	var from = getUrlParam("from");
 	var to = getUrlParam("to");
 	var fromarr = new Array();

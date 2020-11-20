@@ -41,7 +41,7 @@
     					 <!-- From area -->
 	                    <div class="FstTitle">
 	                    	 <div class="fstTitleContent">Transfer completed</div>
-	                    	 <div class="payAmt">- 20.00 HKD</div>
+	                    	 <div id= "amt" class="payAmt">- 20.00 HKD</div>
 		                    <div class="sepLine"></div>
 	                    </div>
 	                    <div class="upeerTitle title1">
@@ -50,28 +50,10 @@
 	    				<div class="upperBox">
 	   					   <div class="offerdetail infoDt">
 	    							<div class="headicon"></div>					
-		    						<div class="headTitle">Van Halen</div>
-		    						<div class="detail cardInfo">6226-6678-3451-6785</div>	
+		    						<div id= "frdNm" class="headTitle"></div>
+		    						<div id= "frdCard" class="detail cardInfo"></div>	
 		    						<div class="infoLine"></div>	    						
 	    					</div>  
-	    					 <div class="offerdetail infoDt">
-	    							<div class="headicon"></div>					
-		    						<div class="headTitle">Van Halen</div>
-		    						<div class="detail cardInfo">6226-6678-3451-6785</div>	
-		    						<div class="infoLine"></div>	    						
-	    					</div>  
-	    					 <div class="offerdetail infoDt">
-	    							<div class="headicon"></div>					
-		    						<div class="headTitle">Van Halen</div>
-		    						<div class="detail cardInfo">6226-6678-3451-6785</div>	
-		    						<div class="infoLine"></div>	    						
-	    					</div>  
-	    					 <div class="offerdetail infoDt">
-	    							<div class="headicon"></div>					
-		    						<div class="headTitle">Van Halen</div>
-		    						<div class="detail cardInfo">6226-6678-3451-6785</div>	
-		    						<div class="infoLine"></div>	    						
-	    					</div>  		
 	    				</div>
 	    				
 	    				
@@ -91,12 +73,21 @@
 <script>
 
 $(document).ready(function () {
+	var amt = "- "+ parseFloat(getUrlParam("amt")).toFixed(2)+" HKD";
+	$('#amt').text(amt);
+	$('#frdNm').text(getUrlParam("frdNm"));
+	$('#frdCard').text(getUrlParam("frdCard"));
 	$("#returnPage").bind('click',returnPage);
 	$("#returnBt1").bind('click',returnPage);
 	
 });
 
-
+function getUrlParam(name) {
+	        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+	        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+	        if (r != null) return unescape(r[2]);
+	        return null; //返回参数值
+	}
 function returnPage() {
 	window.location.href='../home.html';
 };

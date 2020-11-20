@@ -144,7 +144,14 @@ function jumptoTransfer() {
 function jumptoQrCode() {
 	window.location.href='./QRcode/qrCode.html';
 };
-
+function generateStr( len ){
+	var sig = "*";
+	var str= "";
+	for(var i = 0; i < len; i++) {      
+        str += sig;
+    }
+	return str;
+}
 function hideMyInfo() {
 	var total =  $("#total").text();
 	var income =  $("#income").text();

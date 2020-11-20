@@ -38,8 +38,8 @@
                      </div>
                      <div class="InfoArea">
                      		<div class="headImg img" style="background-image: url(../img/transfer/head2.jpg)"></div>
-                     		<div class="FriNm">Van Halen</div>
-                     		<div class="FriBankNo">6226-6678-3451-6785</div>
+                     		<div id="frdNm" class="FriNm">Van Halen</div>
+                     		<div id="frdCard" class="FriBankNo">6226-6678-3451-6785</div>
 	                     	<!-- 金额栏目 -->
 		    				<div class="msgArea">			
 		    					<div class="msgdetail">
@@ -54,8 +54,8 @@
                      </div>
                      
                       <div id="page1" class="page1">
-	    				<div class="upperBox">
-	    					<div class="offerdetail">
+	    				<div id ="upperBoxArea" class="upperBox">
+	    					<!-- <div class="offerdetail">
 	    						<div class= "cardTitle">My Default Bank Card</div>
 	    						<div class="bankGicon" style="background-image: url(../img/common/hsbc.png)"></div>
 	    						<div id = "bfrCard1" class="detail detailtitle">HSBC</div>
@@ -81,7 +81,7 @@
 	    						<div id = "nfrCard3" class="detail detailbottom">5236-4978-7889-2314</div>
     						    <div id = "ifrCard3"  class="circleIcon" ></div>
     							<div id = "frCard3" class="circleIcon1" onclick="setFromCard(this)"></div>
-	    					</div>    	
+	    					</div>    	 -->
 	    				</div>	    				
 	    				
 
@@ -107,12 +107,23 @@
 $(document).ready(function () {
 	/* $('#page2').hide(); */
 	/* $('#page2').show(); */
+	$("#frdNm").text(getUrlParam("frdNm"));
+	$("#frdCard").text(getUrlParam("frdCard"));
+	getFromCardList();
 	$("#returnPage").bind('click',returnPage);
 	$("#clearBt").bind('click',clearFunc);
 	$('#nextBt').bind('click',jumptoCardSucess);
+	
 });
 var fromCard = new Array();
 
+
+function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]);
+        return null; //返回参数值
+}
 /* 设置转出卡 */
 function setFromCard(ele){
 	var id = $(ele).attr("id");
@@ -129,7 +140,45 @@ function setFromCard(ele){
 	fromCard[2] = $('#c'+ id).text();
 	fromCard[3] = $('#n'+ id).text();
 }
-
+function getFromCardList(){
+	var cardHtmlone = "<div class=\"offerdetail\"><div class=\"bankGicon\" style=\"background-image: url("; 
+	var pageHtml = ""
+	$.ajax({
+        async : false,
+        type : "get",
+        url : "/cardInfos/selCardList",
+        contentType: "application/json",
+        //这里设置查询条件,如果不设置查询条件，就返回全量列表
+        data:{
+        	cardTyp:"Debit"
+        },
+        success: function (res) {         
+            for(j = 0,len = res.length; j < len; j++) {
+            	if(j == 0){
+            		pageHtml += "<div class=\"offerdetail\"><div class= \"cardTitle\">My Default Bank Card</div><div class=\"bankGicon\" style=\"background-image: url(" 
+            				+ res[j]["bankLogoAdd"] + ")\"></div> <div id = \"btrCard" + j +"\" class=\"detail detailtitle\">" 
+                	+ res[j]["bankCardTyp"] + "</div><div id = \"ctrCard" + j +"\" class=\"detail detailcontent\">" +  res[j]["cardTyp"] 
+                	+ "</div><div id = \"ntrCard" + j +"\"  class=\"detail detailbottom\">" + res[j]["cardNo"] 
+                	+ "</div><div id = \"itrCard" + j +"\" class=\"circleIcon\" ></div>"
+                	+ "<div id = \"trCard" + j +"\" class=\"circleIcon1\" onclick=\"setFromCard(this)\"></div></div>";
+            	}else{
+            		pageHtml += "<div class=\"offerdetail\"><div class= \"cardTitle\">My Other Bank Card</div><div class=\"bankGicon\" style=\"background-image: url(" 
+        				+ res[j]["bankLogoAdd"] + ")\"></div> <div id = \"btrCard" + j +"\" class=\"detail detailtitle\">" 
+            	+ res[j]["bankCardTyp"] + "</div><div id = \"ctrCard" + j +"\" class=\"detail detailcontent\">" +  res[j]["cardTyp"] 
+            	+ "</div><div id = \"ntrCard" + j +"\"  class=\"detail detailbottom\">" + res[j]["cardNo"] 
+            	+ "</div><div id = \"itrCard" + j +"\" class=\"circleIcon\" ></div>"
+            	+ "<div id = \"trCard" + j +"\" class=\"circleIcon1\" onclick=\"setFromCard(this)\"></div></div>";
+            	}
+            	
+            } 
+            console.log(pageHtml);
+            $("#upperBoxArea").html(pageHtml)
+        },
+        error:function (res) {
+            alert(res);
+        }
+    });
+}
 function returnPage() {
 	window.location.href='./transferHome.html';
 };
@@ -144,7 +193,8 @@ function jumptoCardSucess() {
 	if(typeof amt == "undefined" || amt == null || amt == ""){
 		
     }else{
-    	window.location.href='./transToFriSucc.html';;
+    	var url = './transToFriSucc.html?frdNm='+getUrlParam("frdNm")+"&frdCard="+getUrlParam("frdCard")+"&amt="+amt;
+    	window.location.href= url;
     }
 	
 };

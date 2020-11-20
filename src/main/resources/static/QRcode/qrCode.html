@@ -93,7 +93,7 @@
                                                             <img :src="item.logo" class="card_logo">
                                                         </el-col>
                                                         <el-col :span="14" class="card_text">
-                                                            <el-row>{{item.name}} - {{item.card}}</el-row>
+                                                            <el-row>{{item.name}}</el-row>
                                                             <el-row>{{item.kind}}</el-row>
                                                             <el-row>{{item.card_num}}</el-row>
                                                         </el-col>
@@ -156,8 +156,13 @@
 
                 // 获取 cards 数据
                 cardData:[
-                    {name:"HSBC", card:"Card A", kind:"MASTERCARD", card_num:"1312-3215-0001-5023", logo:"../img/QRcode/图片 19.png", if_choose:'1'},
-                    {name:"BOC", card:"Card B", kind:"Bank Account", card_num:"897-123452-213", logo:"../img/QRcode/图片 21.png", if_choose:'0'},
+                    {name:"HSBC MASTERCARD", kind:"Credit", card_num:"1312-3215-0001-5023", logo:"../img/QRcode/2.png", if_choose:'1'},
+                    {name:"HSB Bank Account", kind:"Debit", card_num:"371-333333-668", logo:"../img/QRcode/1.png", if_choose:'0'},
+                    {name:"ICBC VISACARD", kind:"Debit", card_num:"4514-6188-8888-8888", logo:"../img/QRcode/4.jpg", if_choose:'0'},
+                    {name:"BOC Bank Account", kind:"Debit", card_num:"897-123452-213", logo:"../img/QRcode/3.png", if_choose:'0'},
+                    
+        
+
                 ],
             }
         },

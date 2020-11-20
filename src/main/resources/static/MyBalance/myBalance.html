@@ -104,7 +104,7 @@
                                                         <el-row>
                                                             <el-col :span="4"><div class="grid-content bg-purple">
                                                                 <div>
-                                                                    <object data="../img/MyBalance/1.svg" type="image/svg+xml" class = "moneyIcon"></object>
+                                                                    <object :data=item.logo type="image/svg+xml" class = "moneyIcon"></object>
                                                                 </div>
                                                             </div></el-col>
                                                             <el-col :span="12"><div class="grid-content bg-purple-light">
@@ -233,11 +233,14 @@
 
                 // 获取数据
                 dataListTransactions:[
-                    {name:"ABC Movie",kind:"Entertainment",time:"Today 15:11",amount:"-80.00 HKD"},
-                    {name:"Southern Fund",kind:"Investment",time:"Today 15:11",amount:"-30.00 HKD"},
-                    {name:"Salary",kind:"Daily Income",time:"Today 15:11",amount:"+45433.00 HKD"},
-                    {name:"Rent",kind:"Investment",time:"Today 15:11",amount:"+12000.00 HKD"},
-                    {name:"ABC Coffee",kind:"Food",time:"Today 15:11",amount:"-30.00 HKD"},
+                    {name:"Salary",kind:"Daily Income",time:"Today 12:11",amount:"+45433.00 HKD", logo:"../img/MyBalance/2.svg"},
+                    {name:"ABC Movie",kind:"Entertainment",time:"Today 15:11",amount:"-80.00 HKD", logo:"../img/MyBalance/5.svg"},
+                    {name:"Southern Fund",kind:"Investment",time:"Today 16:22",amount:"-30.00 HKD", logo:"../img/MyBalance/3.svg"},
+                    {name:"ABC Coffee",kind:"Food",time:"Today 17:21",amount:"-80.00 HKD", logo:"../img/MyBalance/4.svg"},
+                    {name:"BBBC News",kind:"Study",time:"Today 18:31",amount:"-30.00 HKD", logo:"../img/MyBalance/6.svg"},
+                    {name:"ABC Market",kind:"Food",time:"Today 19:17",amount:"-80.00 HKD", logo:"../img/MyBalance/8.svg"},
+                    {name:"Rent",kind:"Investment",time:"Today 20:21",amount:"+12000.00 HKD",logo:"../img/MyBalance/1.svg"},
+                    {name:"Nanfang Fund",kind:"Investment",time:"Today 22:11",amount:"+30.00 HKD",logo:"../img/MyBalance/3.svg"},
                 ],
                 dataListAssets:[
                     {name:"HSBC - Card A", kind:"MASTERCARD", number:"1312-3215-0001-5023", amount:"- 4322.00 HKD", due:"DUE date: Sep 30, 2020", logo_url:"../img/MyBalance/图片 19.png"},

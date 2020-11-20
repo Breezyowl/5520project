@@ -47,8 +47,9 @@
     				<div id="app">
                         <div class="scan_box">
                             <div>
-                                <el-col id="jump_to_home">
-                                    <object data="../img/QRcode/图标 171.svg" type="image/svg+xml" class = "scan_logo"></object>
+                                <el-col>
+                                    <div id="jump_to_home" class="top_back"></div>
+                                    <object data="../img/QRcode/图标 171.svg" type="image/svg+xml" class = "scan_logo" ></object>
                                 </el-col>
                                 <el-col class="top_text">
                                     Album
@@ -85,6 +86,9 @@
             },
 
         methods:{
+            // jump_to_home(){
+            //     console.log(123)
+            // }
         }
     })
 
@@ -112,6 +116,7 @@
         // handle on success condition with the decoded message
         html5QrcodeScanner.clear();
         // jump to 支付选择
+        window.location.href="../payment/paymentSel.html";
 
         // ^ this will stop the scanner (video feed) and clear the scan area.
     }

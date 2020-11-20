@@ -10,11 +10,12 @@
         <result column="Bank_Card_Typ" property="bankCardTyp" />
         <result column="Card_Typ" property="cardTyp" />
         <result column="Bank_Logo_Add" property="bankLogoAdd" />
+        <result column="Tail_Number" property="tailNumber" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        Cust_ID, Card_No, Card_Seq, Bank_Card_Typ, Card_Typ, Bank_Logo_Add
+        Cust_ID, Card_No, Card_Seq, Bank_Card_Typ, Card_Typ, Bank_Logo_Add, Tail_Number
     </sql>
 
 </mapper>

@@ -27,7 +27,7 @@ public class MysqlGenerator {
     private static String packageName="src/main";                //初始文件路径
     private static String customPath="";      //自定义路径
     private static String authorName="Dylan";              //作者
-    private static String table="offer_infos";                      //table名字
+    private static String table="card_infos";                      //table名字
     private static String prefix="";                         //table前缀
     private static File file = new File(packageName);
     private static String path = file.getAbsolutePath();

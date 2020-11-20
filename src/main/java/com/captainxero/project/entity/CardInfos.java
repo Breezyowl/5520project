@@ -12,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Dylan
- * @since 2020-11-17
+ * @since 2020-11-20
  */
 @TableName("card_infos")
 public class CardInfos extends Model<CardInfos> {
@@ -49,6 +49,8 @@ public class CardInfos extends Model<CardInfos> {
      */
     @TableField("Bank_Logo_Add")
     private String bankLogoAdd;
+    @TableField("Tail_Number")
+    private String tailNumber;
 
 
     public String getCustId() {
@@ -99,6 +101,14 @@ public class CardInfos extends Model<CardInfos> {
         this.bankLogoAdd = bankLogoAdd;
     }
 
+    public String getTailNumber() {
+        return tailNumber;
+    }
+
+    public void setTailNumber(String tailNumber) {
+        this.tailNumber = tailNumber;
+    }
+
     @Override
     protected Serializable pkVal() {
         return this.custId;
@@ -113,6 +123,7 @@ public class CardInfos extends Model<CardInfos> {
         ", bankCardTyp=" + bankCardTyp +
         ", cardTyp=" + cardTyp +
         ", bankLogoAdd=" + bankLogoAdd +
+        ", tailNumber=" + tailNumber +
         "}";
     }
 }

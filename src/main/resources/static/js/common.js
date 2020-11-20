@@ -17,6 +17,26 @@ function generateStr( len ){
 	return str;
 }
 
+//获取卡片信息
+export function getCardList(){	
+	var cards;
+	$.ajax({
+        async : false,
+        type : "get",
+        url : "/cardInfos/selCardList",
+        contentType: "application/json",
+        //这里设置查询条件,如果不设置查询条件，就返回全量列表
+        data:{},
+        success: function (res) {         
+        	console.log(res.toString());
+        	cards=res;
+            return res;
+        },
+        error:function (res) {
+            alert(res);
+        }
+    });
+}
 export function getofferList(){
 	var offerId = "";
 	var offerNm = "";

@@ -48,8 +48,8 @@ export function getofferCards(offerNm){
         contentType: "application/json",
         //这里设置查询条件,如果不设置查询条件，就返回全量列表
         data:{
-        	//   offerId: offerId,
-        	   offerNm: offerNm
+        	  offerId: offerId,
+        	//    offerNm: offerNm
         	 },
         success: function (res) {
             console.log(res.toString());

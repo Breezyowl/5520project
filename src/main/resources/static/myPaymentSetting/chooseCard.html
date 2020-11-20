@@ -61,16 +61,16 @@
                         <!-- loop -->
                         <div class="loop">
                             <div class="scroll">
-                                <div v-for="item in cardData" :key="item.name">
+                                <div v-for="item in cardData" :key="item.cardSeq">
                                     <br>
-                                    <div class="item_box">
+                                    <div class="item_box" @click="update(item)">
                                         <el-col :span="6">
-                                            <img :src="item.logo" class="card_logo">
+                                            <img :src="item.bankLogoAdd" class="card_logo">
                                         </el-col>
                                         <el-col :span="18" class="card_text">
-                                            <el-row>{{item.name}} - {{item.card}}</el-row>
-                                            <el-row>{{item.kind}}</el-row>
-                                            <el-row>{{item.card_num}}</el-row>
+                                            <el-row>{{item.bankCardTyp}}</el-row>
+                                            <el-row>{{item.cardTyp}}</el-row>
+                                            <el-row>{{item.cardNo}}</el-row>
                                         </el-col>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
 
 
                         <!-- changing my settings -->
-                        <div class="changeSet_box">
+                        <div class="changeSet_box" style="display: none;"> 
                             <el-col :span="8">
                                 <object data="../img/MyPaymentSettings/图标 61.svg" type="image/svg+xml" class="changeSet_logo"></object>
                             </el-col :span="16">
@@ -100,7 +100,10 @@
 
 
 
-<script type="text/javascript">
+<script type="module">
+
+    import {getCardList , updateOfferList} from "../js/common.js"
+
     var app = new Vue({
         el: '#app',
 
@@ -108,21 +111,34 @@
             return{
 
                 // 获取 cards 数据
-                cardData:[
-                    {name:"HSBC", card:"Card A", kind:"MASTERCARD", card_num:"1312-3215-0001-5023", logo:"../img/MyPaymentSettings/图片 19.png", if_choose:1},
-                    {name:"BOC", card:"Card B", kind:"Bank Account", card_num:"897-123452-213", logo:"../img/MyPaymentSettings/图片 21.png", if_choose:0},
-                    {name:"HSB", card:"Card C", kind:"Bank Account", card_num:"371-333333-668", logo:"../img/MyPaymentSettings/图片 251 (1).png", if_choose:0},
-                ],
-                
+                cardData:[], 
             }
         },
         
 
         created:
             function(){
+                this.initial()
             },
 
         methods:{
+            initial(){
+                var res = getCardList()
+                this.cardData = res
+                console.log(this.cardData)
+            },
+            update(item){
+                // 获取参数
+                var url = location.search; 
+                console.log(url)
+                var id = url.charAt(url.length - 1)
+
+                var arr = [{
+                    offerId: id ,
+                    cardNo: item.cardNo,
+                    tailNumber: item.tailNumber}]
+                updateOfferList(arr)
+            }
         }
     })
 

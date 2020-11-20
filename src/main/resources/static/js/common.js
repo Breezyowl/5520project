@@ -19,7 +19,7 @@ function generateStr( len ){
 
 //获取卡片信息
 export function getCardList(){	
-	var cards;
+    var cards;
 	$.ajax({
         async : false,
         type : "get",
@@ -29,13 +29,14 @@ export function getCardList(){
         data:{},
         success: function (res) {         
         	console.log(res.toString());
-        	cards=res;
+            cards=res;
             return res;
         },
         error:function (res) {
             alert(res);
         }
     });
+    return cards;
 }
 export function getofferList(){
 	var offerId = "";

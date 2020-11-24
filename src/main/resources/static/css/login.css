@@ -29,12 +29,13 @@
 	position: absolute;
 	width: 280px;
 	height: 18px;
-	left: 1.19rem;
+	left: 70px;
+	/* left: 1.19rem; */
     top: 11.084rem;
 	color: rgba(145, 144, 144, 1);
 	font-size: 9px;
 	line-height: 150%;
-	text-align: left;
+	text-align: center;
 }
 .page1{
 	display:none;

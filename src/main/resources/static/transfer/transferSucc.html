@@ -30,8 +30,8 @@
     			<div id="pageContainer" class="pageContainer" data-scale="72">
     				<!-- 顶部显示区域 -->
     				<div class = "topBox_background">
-                            <div class = "topBox"> 
-                                <div id ="returnPage" class="leftarrow"></div>
+                            <div id ="returnPage" class = "topBox"> 
+                                <div  class="leftarrow"></div>
                                 <div class = topTitle>
                                     Transfer Successful
                                 </div>
@@ -88,13 +88,13 @@
 
 $(document).ready(function () {
 	$("#returnPage").bind('click',returnPage);
-	$("#returnBt1").bind('click',returnPage);
+	$("#returnBt1").bind('click',returnHomePage);
 	initData();
 });
 
 
 function returnPage() {
-	window.location.href='../home.html';
+	window.location.href='./transferHome.html';
 };
 
 function initData(){
@@ -117,6 +117,9 @@ function initData(){
 	$('#tc2').text(toarr[0]["cardTyp"]);
 	$('#tc3').text(toarr[0]["cardNo"]);
 }
+function returnHomePage() {
+	window.location.href='../home.html';
+};
 
 function getUrlParam(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象

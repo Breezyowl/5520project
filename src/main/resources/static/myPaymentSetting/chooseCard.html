@@ -69,8 +69,8 @@
                                         </el-col>
                                         <el-col :span="18" class="card_text">
                                             <el-row>{{item.bankCardTyp}}</el-row>
-                                            <el-row>{{item.cardTyp}}</el-row>
                                             <el-row>{{item.cardNo}}</el-row>
+                                            <el-row>{{item.content}}</el-row>
                                         </el-col>
                                     </div>
                                 </div>
@@ -126,21 +126,21 @@
             initial(){
                 var url = location.search; 
                 var id = url.charAt(url.length - 1)
-                console.log(id)
                 var res = getofferCards(id)
                 this.cardData = res
-                console.log(this.cardData)
             },
             update(item){
                 // 获取参数
                 var url = location.search; 
-                console.log(url)
                 var id = url.charAt(url.length - 1)
+
 
                 var arr = [{
                     offerId: id ,
                     cardNo: item.cardNo,
-                    tailNumber: item.tailNumber}]
+                    tailNumber: item.tailNumber,
+                    content: item.content
+                }]
                 updateOfferList(arr)
             }
         }

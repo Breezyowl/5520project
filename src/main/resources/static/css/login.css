@@ -188,10 +188,10 @@ background-color: transparent !important;
     box-shadow: 0 0.06rem 0.06rem 0.06rem rgba(0,0,0,0.5);
 }
 .image_235X2 .cImg {
-    width: 2.127rem;
-    height: 3.191rem;
-    margin-left: 0rem;
-    margin-top: -0.053rem;
+	position: absolute;
+    width: 138px;
+	height: 245px;
+	top: -54px;
     background-size: cover;
     line-height: 0;
 }

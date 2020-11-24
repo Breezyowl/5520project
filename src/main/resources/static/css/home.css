@@ -23,17 +23,21 @@
 
 .logimg{
 	position: absolute;
-	width: 45px;
+	/* width: 45px;
 	height: 45px;
 	left: 351px;
-	top: 22px;
+	top: 22px; */
+	width: 34px;
+	height: 34px;
+	left: 351px;
+	top: 17px;
 	border-radius: 23px;
 	border: rgba(56, 56, 56, 1) solid 1px;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
 	background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-	background-image: url(../img/img8159694579f0.jpeg);
+	background-image: url(../img/dog.jpg);
 }
 
 .hideIcon{

@@ -13,7 +13,7 @@ USER：111111
 PW：111111
 
 4.progress plan link
-文档：https://kdocs.cn/l/cl5N5h219a46
+https://kdocs.cn/l/cl5N5h219a46
 
 5.back end interface link
 http://localhost:8080/swagger-ui.html

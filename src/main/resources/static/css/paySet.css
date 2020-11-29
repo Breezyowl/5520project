@@ -184,7 +184,8 @@
 .noOffer{
 	width: 414px;
 	/* height 高度待定 */
-    height: 550px; 
+	/* height: 328px;  */
+    height: 540px; 
     background-color: rgba(255, 255, 255, 1);
     position: absolute;
 }

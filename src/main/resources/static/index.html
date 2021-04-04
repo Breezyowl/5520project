@@ -4,12 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>FFPAY | Login</title>
+    <title>Insurance | pig</title>
 
     <link href="css/bootstrap.min.css"  rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css"  rel="stylesheet">
     <link href="css/animate.css"  rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
     <!-- Mainly scripts -->
@@ -18,62 +17,10 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<body id="protoPreview" class=" overflowHidden">
+<body>
 	
-    <div class="body-wrapper">
-    	<div class="phone-view-box">
-    		<div class="model-wrapper" style="transform: scale(0.72);">
-    			<div class="mobile-model"></div>
-    		</div>
-    		<div id="appContainer" class="mobile-wrapper">
-    			<div id="pageContainer" class="pageContainer" data-scale="72">
-    				<div id ="pLoad" class="page pLoad">
-    					<div class="ffImg"></div>
-    					<div  class="middleTxt">Fast Fusion Pay</div>
-    					<div  class="bottomTxt">©️2020-2030 Fast Fusion Pay. All rights reserved</div>
-    				</div>
-    				<div id="page1" data-islandscape="false" class="page current page1" data-key="1" data-direction="y" >
-    					<div id="image_3X1" class="imageC cDiv image_3X1" data-state="-1" data-select=".image_3X1">
-	    					<div class="cutImgOutBox"><img class="cImg" src="./img/img142030174d9209bb8.png"></div>
-    					</div>
-    					<div id="image_4X1" class="imageC cDiv image_4X1" data-state="-1" data-select=".image_3X1">
-	    					<div class="cutImgOutBox"><img class="cImg" src="./img/img142032174d920f1a8.png"></div>
-    					</div>
-    					<div id="logbtn" class="textC cDiv text_30X1" >
-    						<p class="content innercontent">Face&nbsp;ID</p>
-    						<div class="gesture-tag"></div>
-    					</div>
-    					<div id="text_41X1" class="textC cDiv text_41X1">
-    						<p class="content text_41X1content">By&nbsp;signing&nbsp;up,&nbsp;I&nbsp;agree&nbsp;to&nbsp;the&nbsp;Term&nbsp;of&nbsp;Use.</p>
-    					</div>
-    					<div id="text_43X1" class="textC cDiv text_43X1 "></div>
-    					<div id="text_45X1" class="textC cDiv text_45X1 "></div>
-    					
-    					<div id="text_46X1" class="form-group textC cDiv text_46X1" >
-						    <select class="content" id="sel1" data-dropup-auto=“false”>
-						        <option class="option">+852</option>
-						        <option class="option">+86</option>
-						        <option class="option">+853</option>
-					        </select>
-    					</div>
-    					
-    					
-    					<div  class="textC cDiv text_934X1" >
-    						 <input id="userid" class="content" contenteditable="true" placeholder="Phone Number"></input>   						 
-    					</div>
-    					<div class="textC cDiv text_935X1" >
-    						 <input id="password" class="content" contenteditable="true" placeholder="PassWord"></input>   						 
-    					</div>
-    					<div id="image_235X2" class="imageC cDiv image_235X2">
-    						<div class="cutImgOutBox"><img class="cImg" src="./img/dog.jpg"></div>
-    					</div>
-    					<div id="text_1309X2" class="textC cDiv text_1309X2">
-    						<p class="content">Welcome,&nbsp;<br id="mockname">Catherine</p>
-						</div> 				
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+    <div>
+		<div>hello world</div>
        
     </div>
 
@@ -83,45 +30,45 @@
 $(document).ready(function () {	
 	/* var mockname = "Catherine";
 	$("#mockname").text(mockname); */
-	$("#logbtn").bind('click',logincheck);
-	$("#password").keyup(function(){
-		var password = $("#password").val();
-		if(password.length >=6){
-			logincheck()
-		}
-	});
-	$("#pLoad").fadeOut(4500);
-	var setTime = setTimeout(function () {
-	 $('#page1').fadeIn(1000);
-	}, 3500);
+	// $("#logbtn").bind('click',logincheck);
+	// $("#password").keyup(function(){
+	// 	var password = $("#password").val();
+	// 	if(password.length >=6){
+	// 		logincheck()
+	// 	}
+	// });
+	// $("#pLoad").fadeOut(4500);
+	// var setTime = setTimeout(function () {
+	//  $('#page1').fadeIn(1000);
+	// }, 3500);
 });
 
 //登录
-function logincheck() {
-	var userid = $("#userid").val();
-	var password = $("#password").val();
-    $.ajax({
-        async : false,
-        type : "get",
-        url : "/sys/login",
-        contentType: "application/json",
-        data:{
-        	  userid:userid,
-        	  password:password
-        	 },
-        success: function (res) {
-            console.log(res.toString());
-            if(res.toString()=="SUCCESS"){
-            	window.location.href='./home.html';
-            }else{
-                alert("用户名或密码错误");
-            }
-
-        },
-        error:function (res) {
-            alert(res);
-        }
-    });
-};
+// function logincheck() {
+// 	var userid = $("#userid").val();
+// 	var password = $("#password").val();
+//     $.ajax({
+//         async : false,
+//         type : "get",
+//         url : "/sys/login",
+//         contentType: "application/json",
+//         data:{
+//         	  userid:userid,
+//         	  password:password
+//         	 },
+//         success: function (res) {
+//             console.log(res.toString());
+//             if(res.toString()=="SUCCESS"){
+//             	window.location.href='./home.html';
+//             }else{
+//                 alert("用户名或密码错误");
+//             }
+//
+//         },
+//         error:function (res) {
+//             alert(res);
+//         }
+//     });
+// };
 </script>
 </html>
